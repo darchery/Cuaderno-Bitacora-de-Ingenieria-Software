@@ -1,0 +1,17 @@
+# Ignorar carpetas y archivos de IntelliJ IDEA, VS Code y python
+.idea/
+*.iml
+*.iws
+.vscode/
+.venv/
+.env/
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar carpetas de dependencias y builds (ejemplos)
+node_modules/
+dist/
+build/
+target/
