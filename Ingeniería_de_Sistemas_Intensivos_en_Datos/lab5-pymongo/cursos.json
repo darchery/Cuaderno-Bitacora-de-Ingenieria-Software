@@ -1,0 +1,21 @@
+{
+ "_id": 1,
+ "nombre": "Python Básico",
+ "profesor": "Ana García",
+ "duracion_horas": 40,
+ "nivel": "Principiante"
+ },
+{
+ "_id": 2, 
+  "nombre": "Web Development",
+  "profesor": "Carlos López",
+  "duracion_horas": 60,
+  "nivel": "Intermedio"
+},
+{
+ "_id": 3,
+ "nombre": "Data Science",
+ "profesor": "María Rodríguez", 
+ "duracion_horas": 80,
+ "nivel": "Avanzado"
+}

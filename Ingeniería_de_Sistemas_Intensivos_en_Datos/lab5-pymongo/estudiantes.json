@@ -1,0 +1,32 @@
+{
+  "_id": 1,
+  "nombre": "Laura Martínez",
+  "edad": 22,
+  "email": "laura@email.com",
+  "ciudad": "Madrid",
+  "curso_id": 1
+},
+{
+ "_id": 2,
+ "nombre": "David Chen",
+ "edad": 25, 
+ "email": "david@email.com",
+ "ciudad": "Barcelona",
+ "curso_id": 2
+},
+{
+ "_id": 3,
+ "nombre": "Sofía Pérez",
+ "edad": 20,
+ "email": "sofia@email.com", 
+ "ciudad": "Madrid",
+ "curso_id": 1
+},
+{
+ "_id": 4,
+ "nombre": "Javier Ruiz",
+ "edad": 28,
+ "email": "javier@email.com",
+ "ciudad": "Valencia", 
+ "curso_id": 3
+}
