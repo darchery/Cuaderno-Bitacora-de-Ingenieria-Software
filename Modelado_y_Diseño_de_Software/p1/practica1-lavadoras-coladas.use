@@ -1,0 +1,72 @@
+model Lavadoras_coladas_v1
+
+enum TipoPrenda{camiseta, jersey, pantalon}
+enum TipoSuciedad{muy_sucio, sucio, limpio}
+
+
+abstract class Lavadora
+    attributes
+        marca : String
+        capacidadDetergente : Integer
+        temperatutaMax : Integer
+        revolucionesMax : Integer
+        pesoMax : Integer
+end
+
+class Lavadora_Normal < Lavadora
+    attributes
+        capacidadSuavizante: Integer
+end
+
+class Lavadora_Secado < Lavadora
+    attributes
+        temperatutaSecadoMax : Integer
+
+end
+
+abstract class Colada
+    attributes
+        temperatura : Integer
+        revolCentrifug : Integer
+        cantDetergente : Integer
+        faseLavado : Integer
+        faseCentrifugado: Integer
+        finFases : Integer 
+        peso : Integer derive : self.prendas->collect(p|p.peso)->sum()
+                                    --Set(Prenda)--      --Bag(Int)--
+end
+
+class Colada_normal < Colada
+    attributes
+        cantSuavizante : Integer
+end
+
+class Colada_secado < Colada
+    attributes
+        temperaturaSecado : Integer
+        faseSecado : Integer
+end 
+
+class Prenda 
+    attributes
+        tipo : TipoPrenda
+        peso : Integer
+end
+
+
+composition lavadoNormal between
+    Lavadora_Normal[1] role lavadora_normal
+    Colada_normal[0..*] role colada_normal
+end
+
+composition lavadoSecado between
+    Lavadora_Secado[1] role lavadora_secado
+    Colada_secado[0..*] role colada_secado
+end
+
+associationclass Estado between 
+    Colada[0..*] role coladas
+    Prenda[0..*] role prendas 
+    attributes 
+        estado : TipoSuciedad 
+end 

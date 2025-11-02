@@ -1,0 +1,64 @@
+reset
+
+!new LavadoraNormal('Bosch')
+!Bosch.marca := 'Bosch'
+!Bosch.capDetergente := 200
+!Bosch.maxTempLavado := 60
+!Bosch.maxCentrifugado := 1800
+!Bosch.maxPeso := 8000
+!Bosch.capSuavizante := 100
+
+!new Prenda('Camiseta1')
+!Camiseta1.tipo := #Camiseta 
+!Camiseta1.peso := 100
+!new Prenda('Camiseta2')
+!Camiseta2.tipo := #Camiseta 
+!Camiseta2.peso := 105
+
+!new Prenda('Jersey1')
+!Jersey1.tipo := #Jersey 
+!Jersey1.peso := 200
+!new Prenda('Jersey2')
+!Jersey2.tipo := #Jersey 
+!Jersey2.peso := 220
+
+!new Prenda('Pantalon1')
+!Pantalon1.tipo := #Pantalon 
+!Pantalon1.peso := 300
+!new Prenda('Pantalon2')
+!Pantalon2.tipo := #Pantalon 
+!Pantalon2.peso := 280
+
+!new ColadaNormal('coladaN1')
+!coladaN1.temp := 30
+!coladaN1.rpm := 1400
+!coladaN1.cantDetergente := 180
+!coladaN1.cantSuavizante := 40
+!coladaN1.inicioL := 3
+!coladaN1.inicioC := 7
+!coladaN1.fin := 10
+
+--Asignamos la colada a la lavadora
+!insert(Bosch,coladaN1) into LavaNormal 
+
+--Asignamos las prendas a la colada
+!insert(coladaN1,Camiseta1) into Estado -- USE le asignsa el ID Estado1
+!Estado1.estado := #Limpio -- La notación #Limpio1 se usa para referirse a un elemento enumerado
+!insert(coladaN1,Pantalon1) into Estado -- USE le asignsa el ID Estado2
+!Estado2.estado := #Limpio
+
+!new ColadaNormal('coladaN2')
+!coladaN2.temp := 30
+!coladaN2.rpm := 1400
+!coladaN2.cantDetergente := 180
+!coladaN2.cantSuavizante := 0
+!coladaN2.inicioL := 12
+
+--Asignamos la colada a la lavadora
+!insert(Bosch,coladaN2) into LavaNormal 
+
+--Asignamos las prendas a la colada
+!insert(coladaN2,Jersey1) into Estado -- USE le asignsa el ID Estado3
+!Estado3.estado := #Sucio -- La notación #Limpio1 se usa para referirse a un elemento enumerado
+!insert(coladaN2,Pantalon2) into Estado -- USE le asignsa el ID Estado4
+!Estado4.estado := #Sucio
