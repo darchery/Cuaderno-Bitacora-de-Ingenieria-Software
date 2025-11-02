@@ -1,0 +1,46 @@
+[
+            {
+                "_id": 1,
+                "nombre": "Laptop Gaming Pro",
+                "categoria": "computadoras",
+                "precio": 1500,
+                "stock": 8,
+                "marca": "ASUS",
+                "tags": ["gaming", "portatil", "rendimiento"],
+                "fecha_ingreso": datetime(2024, 1, 10),
+                "activo": True
+            },
+            {
+                "_id": 2,
+                "nombre": "Smartphone Galaxy",
+                "categoria": "moviles", 
+                "precio": 799,
+                "stock": 25,
+                "marca": "Samsung",
+                "tags": ["android", "5G", "camara"],
+                "fecha_ingreso": datetime(2024, 2, 15),
+                "activo": True
+            },
+            {
+                "_id": 3,
+                "nombre": "Tablet iPad",
+                "categoria": "tablets",
+                "precio": 599,
+                "stock": 15,
+                "marca": "Apple",
+                "tags": ["apple", "creatividad", "portatil"],
+                "fecha_ingreso": datetime(2024, 1, 25),
+                "activo": True
+            },
+			{
+				"_id": 4,
+				"nombre": "Auriculares Bluetooth",
+				"categoria": "audio",
+				"precio": 299,
+				"stock": 0,
+				"marca": "Sony", 
+				"tags": ["audio", "inalambrico", "calidad"],
+				"fecha_ingreso": datetime(2024, 3, 1),
+				"activo": False
+			}
+        ]

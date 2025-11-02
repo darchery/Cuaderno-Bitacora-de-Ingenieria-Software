@@ -1,0 +1,23 @@
+ [
+            {
+                "nombre": "Ana García",
+                "email": "ana@techworld.com",
+                "ciudad": "Madrid",
+                "premium": True,
+                "fecha_registro": datetime(2023, 12, 1)
+            },
+            {
+                "nombre": "Carlos López", 
+                "email": "carlos@techworld.com",
+                "ciudad": "Barcelona",
+                "premium": False,
+                "fecha_registro": datetime(2024, 1, 15)
+            },
+            {
+                "nombre": "María Rodríguez",
+                "email": "maria@techworld.com", 
+                "ciudad": "Madrid",
+                "premium": True,
+                "fecha_registro": datetime(2023, 11, 20)
+            }
+        ]

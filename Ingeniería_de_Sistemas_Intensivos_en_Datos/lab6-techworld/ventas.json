@@ -1,0 +1,26 @@
+[
+            {
+                "producto_id": 1,
+                "cliente_email": "ana@techworld.com",
+                "cantidad": 1,
+                "total": 1500,
+                "fecha": datetime(2024, 3, 15),
+                "ciudad": "Madrid"
+            },
+            {
+                "producto_id": 2,
+                "cliente_email": "carlos@techworld.com", 
+                "cantidad": 2,
+                "total": 1598,
+                "fecha": datetime(2024, 3, 16),
+                "ciudad": "Barcelona"
+            },
+            {
+                "producto_id": 3,
+                "cliente_email": "maria@techworld.com",
+                "cantidad": 1, 
+                "total": 599,
+                "fecha": datetime(2024, 3, 17),
+                "ciudad": "Madrid"
+            }
+        ]
