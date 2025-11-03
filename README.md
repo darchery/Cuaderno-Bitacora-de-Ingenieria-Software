@@ -27,7 +27,7 @@ Las asignaturas incluidas son:
    - Práctica 1 - Detección de Anomalías con Machine Learning
 4. Aprendizaje Automático
    - Práctica 1 - Librerías de Python + Breast Cancer Wisconsin Dianostic(dataset)
-   - 
+   
 ## Estructura del repositorio
 
 ```text
