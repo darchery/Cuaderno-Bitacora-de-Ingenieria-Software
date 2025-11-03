@@ -1,5 +1,4 @@
 # Cuaderno-Bitacora-de-Ingenieria-Software(University of Málaga)
-Virtual repository of files, programs and practices/laboratories performed during the course(Software Engineering)
 
 ## Índice
 
