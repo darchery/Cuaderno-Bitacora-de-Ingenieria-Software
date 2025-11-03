@@ -27,8 +27,7 @@ Las asignaturas incluidas son:
    - Práctica 1 - Detección de Anomalías con Machine Learning
 4. Aprendizaje Automático
    - Práctica 1 - Librerías de Python + Breast Cancer Wisconsin Dianostic(dataset)
-Aquí tienes una propuesta de **README** mejorado para el repositorio **Cuaderno‑Bitácora‑de‑Ingeniería‑Software** (Universidad de Málaga) del usuario darchery. Puedes copiarlo y adaptarlo según lo consideres oportuno:
-
+   - 
 ## Estructura del repositorio
 
 ```text
