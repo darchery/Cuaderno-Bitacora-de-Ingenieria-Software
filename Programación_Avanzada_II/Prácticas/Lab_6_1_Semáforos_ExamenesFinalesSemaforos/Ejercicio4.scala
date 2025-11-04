@@ -1,0 +1,69 @@
+package Lab61.soluciones
+
+import java.util.concurrent.Semaphore
+import scala.util.Random
+
+class Coche(C: Int) extends Thread {
+  // CS-pasajero1: si el coche está lleno, un pasajero no puede subir al coche hasta que haya terminado
+  // el viaje y se hayan bajado los pasajeros de la vuelta actual
+  // CS-pasajero2: un pasajero que está en el coche no puede bajarse hasta que haya terminado el viaje
+  // CS-coche: el coche espera a que se hayan subido C pasajeros para dar una vuelta
+  private var numPas = 0
+  private val puertaEntrada = new Semaphore(1) // CS- Pasajero1 => ABIERTA
+  private val puertaSalida = new Semaphore(0) // CS-Pasajero2 => CERRADA
+  private val lleno = new Semaphore(0) // CS-Coche => Empieza vacío
+
+  def nuevoPaseo(id: Int) = {
+    // el pasajero id quiere dar un paseo en la montaña rusa
+    puertaEntrada.acquire() // Se cierra la entrada
+    numPas += 1 // Entra el pasajero
+    log(s"El pasajero $id se sube al coche. Hay $numPas pasajeros.")
+    if (numPas < C) {
+      puertaEntrada.release() // Si aún caben más => se abre la puerta(señor con cordon abriendo y cerrando)
+    } else {
+      lleno.release() // Si no caben más => se indica que está lleno
+    }
+
+    puertaSalida.acquire() // esperan el final del viaje(la puerta de salida se cierra) => para que no haya accidentes
+    // mutex.acquire()
+    numPas -= 1
+    log(s"El pasajero $id se baja del coche. Hay $numPas pasajeros.")
+    if (numPas > 0) puertaSalida.release // Si aún quedan pasajeros se abre la puerta de salida
+    else puertaEntrada.release() // Si no quedan pasajeros => se abre la puerta de entrada
+  }
+
+  def esperaLleno = {
+    // el coche espera a que se llene para dar un paseo
+    lleno.acquire()
+    log(s"        Coche lleno!!! empieza el viaje....")
+  }
+
+  def finViaje = {
+    // el coche indica que se ha terminado el viaje
+    log(s"        Fin del viaje... :-(")
+    puertaSalida.release() // Se abre la puerta para que salgan
+  }
+
+  override def run = {
+    while (true) {
+      esperaLleno
+      Thread.sleep(Random.nextInt(Random.nextInt(500))) // el coche da una vuelta
+      finViaje
+    }
+  }
+}
+
+object Ejercicio4 {
+  def main(args: Array[String]) = {
+    val coche = new Coche(5)
+    val pasajero = new Array[Thread](12)
+    coche.start()
+    for (i <- 0 until pasajero.length)
+      pasajero(i) = thread {
+        while (true) {
+          Thread.sleep(Random.nextInt(500)) // el pasajero se da una vuelta por el parque
+          coche.nuevoPaseo(i)
+        }
+      }
+  }
+}
