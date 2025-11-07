@@ -175,91 +175,30 @@ def ej13_mostrar_indices_productos(db):
 '''
 def ej14_agregaciones_agrupar_productos_categoria(db):
     titulo("Ejercicio 14: agrupar productos por categoría")
-    # o Cantidad total de productos
-    titulo("o Cantidad total de productos")
     pipeline = [
-        {"$group": {
+         {"$group": {
             "_id": "$categoria",
-            "totalProductos": {"$sum": 1}
-        }}
+            "totalProductos": {"$sum": 1},              # Cantidad total de productos
+            "avgPrecio": {"$avg": "$precio"},           # Precio promedio de los productos 
+            "stockTotal": {"$sum": "$stock"},           # Stock total disponible
+            "precioMasCaro": {"$max": "$precio"},       # Precio del producto más caro 
+            "listaProductos": {"$push": "$nombre"},     # Lista de todos los productos pertenecientes a esa categoría 
+            }
+        },
+        {"$sort": {"cantidadTotalProductos": -1}}       # Ordenar los resultados por la cantidad de productos de forma descendente
     ]
+
     output = db.productos.aggregate(pipeline)
     for doc in output:
         print(f"Categoría: {doc['_id']}")
-        print(f"Cantidad total de productos: {doc['totalProductos']}")
-        space()
-    # o Precio promedio de los productos
-    titulo("o Precio promedio de los productos")
-    pipeline = [
-        {"$group": {
-            "_id": "$categoria", 
-            "avgPrecio": {"$avg": "$precio"}
-        }}
-    ]
-    output = db.productos.aggregate(pipeline)
-    for doc in output:    
-        print(f"Categoría: {doc['_id']}")
+        print(f"Cantidad total de productos (orden descendente): {doc['totalProductos']}")
         print(f"Precio promedio: {doc['avgPrecio']}")
-        space()
-    # o Stock total disponible
-    titulo("o Stock total disponible")
-    pipeline = [
-        {"$group": {
-            "_id": "$categoria",
-            "stockTotal": {"$sum": "$stock"}
-        }}
-    ]
-    output = db.productos.aggregate(pipeline)
-    for doc in output:    
-        print(f"Categoría: {doc['_id']}")
         print(f"Stock total: {doc['stockTotal']}")
-        space()
-    # o Precio del producto más caro
-    titulo("Precio del producto más caro")
-    pipeline = [
-        {"$limit": 1},
-        {"$sort": {"precio": -1}},
-        {"$group": {
-            "_id": "$categoria",
-            "precio": {"$first": "$precio"},
-            "nombre": {"$first": "$nombre"}
-        }}
-    ]
-    output = db.productos.aggregate(pipeline)
-    for doc in output:    
-        print(f"Categoría del producto más caro: {doc['_id']}")
-        print(f"Nombre: {doc['nombre']}")
-        print(f"Precio: {doc['precio']}")
-        space()
-    # o Lista de todos los productos pertenecientes a esa categoría
-    titulo("o Lista de todos los productos pertenecientes a esa categoría")
-    pipeline = [
-        {"$group": {
-            "_id": "$categoria",
-            "listaProductos": {"$push": "$nombre"}
-        }}
-    ]
-    output = db.productos.aggregate(pipeline)
-    for doc in output:    
-        print(f"Categoría: {doc['_id']}")
+        print(f"Precio del producto más caro: {doc['precioMasCaro']}")
         for producto in doc['listaProductos']:
             print(f"Nombre: {producto}")
         space()
-    # o Ordenar los resultados por la cantidad de productos de forma
-    # descendente
-    titulo("o Ordenar los resultados por la cantidad de productos de forma descendente")
-    pipeline = [
-        {"$group": {
-            "_id": "$categoria",
-            "totalProductos": {"$sum": 1}
-        }},
-        {"$sort": {"totalProductos": -1}}
-    ]
-    output = db.productos.aggregate(pipeline)
-    for doc in output:
-        print(f"Categoria: {doc['_id']}")
-        print(f"Cantidad de productos: {doc['totalProductos']}")
-        space()
+
 # Ejercicio 15: 
 '''
     Combina información de ventas con datos detallados de
@@ -314,59 +253,24 @@ def ej15_lookup_ventas_productos(db):
         o Promedio de venta por transacción
         o Ordenar los resultados por el total de ventas de forma descendente
 '''
-def ej16_agrupacion_ventas_por_ciudad(db):
-    # o Total de ventas en euros
-    titulo(" o Total de ventas en euros")
+def ej16_agrupacion_ventas_por_ciudad(db):    
+    titulo("Ejercicio 16: agrupar ventas por ciudad")
     pipeline = [
         {"$group": {
             "_id": "$ciudad",
-            "totalVentas": {"$sum": "$total"}
-        }}
-    ]
-    resultados = list(db.ventas.aggregate(pipeline))
-    for venta in resultados:
-        print(f"Ciudad: {venta['_id']}")
-        print(f"Ventas totales: {venta['totalVentas']} €")
-        space()
-    # o Cantidad total de transacciones realizadas
-    titulo("o Cantidad total de transacciones realizadas")
-    pipeline = [
-        {"$group": {
-            "_id": "$ciudad",
-            "transacciones": {"$sum": 1}
-        }}
-    ]
-    resultados = list(db.ventas.aggregate(pipeline))
-    for venta in resultados:
-        print(f"Ciudad: {venta['_id']}")
-        print(f"Transacciones totales: {venta['transacciones']}")
-        space()
-    # o Promedio de venta por transacción
-    titulo("o Promedio de venta por transacción")
-    pipeline = [
-        {"$group": {
-            "_id": "$ciudad",
+            "totalVentas": {"$sum": "$total"},
+            "transacciones": {"$sum": 1},
             "avgPrecio": {"$avg": "$total"}
-        }}
-    ]
-    resultados = list(db.ventas.aggregate(pipeline))
-    for venta in resultados:
-        print(f"Ciudad: {venta['_id']}")
-        print(f"Promedio por venta: {venta['avgPrecio']} €")
-        space()
-    # o Ordenar los resultados por el total de ventas de forma descendente
-    titulo("o Ordenar los resultados por el total de ventas de forma descendente")
-    pipeline = [
-        {"$group": {
-            "_id": "$ciudad",
-            "totalVentas": {"$sum": "$total"}
         }},
         {"$sort": {"totalVentas": -1}}
     ]
+
     resultados = list(db.ventas.aggregate(pipeline))
     for venta in resultados:
         print(f"Ciudad: {venta['_id']}")
         print(f"Ventas totales: {venta['totalVentas']} €")
+        print(f"Transacciones: {venta['transacciones']}")
+        print(f"Precio medio: {venta['avgPrecio']} €")
         space()
 
 # ------------------------------------------------------------------------------
