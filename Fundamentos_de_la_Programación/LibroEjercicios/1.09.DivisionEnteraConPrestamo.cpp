@@ -1,0 +1,11 @@
+#include <iostream>
+#include <array>
+#include <math.h>
+
+using namespace std;
+ 
+int main(){
+ 
+return 0;
+ /*MISMO QUE EL OTRO*/
+}
