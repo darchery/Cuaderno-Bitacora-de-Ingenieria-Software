@@ -293,7 +293,7 @@ ej7_5_aux = pd.merge(
     )
 ej7_5 = ej7_5_aux.groupby(['cliente_id', 'nombre']).agg(
     gasto_medio=('total', 'mean'),
-    num_pedidos=('cliente_id', 'sum')
+    num_pedidos=('pedido_id', 'sum')
 )
 print(ej7_5)
 
@@ -305,6 +305,10 @@ ej7_6_aux = pd.merge(
         on='cliente_id',
         how='left'
     )
-ej7_6 = ej7_6_aux.groupby(['rango_edad', 'producto'])['total'].sum().reset_index()
-ej7_6 = ej7_6.sort_values(['rango_edad', 'total'], ascending=[True, False])
-print(ej7_6.groupby('rango_edad').head(2))
+# Agrupamos por categoría y producto, de los atributos cogemos el total y la cantidad y se acumulan
+# (para la misma categoría y producto se acumulan el total y la cantidad) y se resetean los índices
+ej7_6 = ej7_6_aux.groupby(['categoria', 'producto'])[['total', 'cantidad']].sum().reset_index()
+# Se ordenan los parámetros
+ej7_6 = ej7_6.sort_values(['categoria', 'total', 'cantidad'], ascending=[True, False, False])
+# Se agrupa nuevamente por categoría y se escoge de cada categoría los 2 productos con mayor desempeño
+print(ej7_6.groupby('categoria').head(2))
