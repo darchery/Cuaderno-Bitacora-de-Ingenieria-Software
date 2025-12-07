@@ -210,4 +210,4 @@ titulo("# EJERCICIO 11: ESCRITURA")
 
 subtitulo("# Guarda en un CSV el DataFrame obtenido en el ejercicio 8.")
 df3.write.mode("overwrite").option("header", "true").csv("datos/resultado_ej_8")
-print("Archivo guardado en su respectiva carpeta \n")
+print("Archivo guardado en su respectiva carpeta 'datos/resultado_ej_8'\n")
