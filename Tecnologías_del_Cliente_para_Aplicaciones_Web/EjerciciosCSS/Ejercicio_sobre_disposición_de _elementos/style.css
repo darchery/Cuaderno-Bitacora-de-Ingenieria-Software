@@ -1,0 +1,512 @@
+/* ==========================================================================
+   FLUJO NORMAL Y PROPIEDAD DISPLAY
+   ========================================================================== */
+
+/* 1. INTERCAMBIO DE MODOS DE DISPOSICIÓN:
+   Crea una página con cinco elementos <div> y cinco elementos <span>. 
+   Observa su disposición por defecto y luego usa la propiedad display 
+   para convertir los <span> en bloques y los <div> en elementos en línea. 
+   Explica con comentarios en el CSS qué cambia y por qué. 
+
+   - El div por defecto se despligan apilados y los span horizontalmente
+   - Tras aplicar el inline(horizontal) al div => horizontal
+   - Tras aplicar el block(vertical) al spann => apilado
+*/
+.ej1-a {
+    display: inline;
+}
+.ej1-b {
+    display: block;
+}
+
+/* 2. BARRA DE BOTONES CON INLINE-BLOCK:
+   Crea una barra de herramientas con tres botones usando elementos <a>. 
+   Partiendo de su comportamiento en línea por defecto, cámbialos a 
+   inline-block para poder aplicarles padding y width uniformes sin 
+   que pierdan su disposición horizontal. 
+*/
+.ej2 {
+   display: inline-block;
+   padding: 1em;
+   width: auto;
+}
+.ej2-1 {
+   border: 2px solid purple;
+   padding: 0.5em;
+   background-color: pink;
+}
+
+
+/* ==========================================================================
+   FLOTANTES Y CLEAR
+   ========================================================================== */
+
+/* 3. IMAGEN FLOTANTE CON PIE DE IMAGEN:
+   Reproduce el patrón clásico de artículo con imagen flotante: un <div> 
+   con texto largo y una imagen que flota a la izquierda rodeada por el texto. 
+   Luego añade un pie de imagen que use clear: left para que aparezca 
+   siempre debajo de la imagen y no a su lado. 
+*/
+.ej3-foto {
+   float: left;
+   width: 200px;
+   margin: 0.5em;
+}
+.ej3-pie {
+   clear: left;
+   color: #555;
+}
+
+
+/* 4. EFECTO DE CLEAR CON MÚLTIPLES FLOTANTES:
+   Crea un contenedor con tres cajas flotantes a la izquierda de diferentes 
+   anchos. Añade un cuarto elemento tras ellas y experimenta con los 
+   valores left, right y both de clear para ver cómo afecta a su posición. 
+*/
+.ej4-a {
+   float: left;
+   border: 2px solid red;
+   margin: 2px;
+}
+.ej4-b {
+   float: left;
+   border: 2px solid green;
+   margin: 2px;
+}
+
+.ej4-c {
+   float: left;
+   border: 2px solid blue;
+   margin: 2px;
+}
+
+.ej4-d {
+   clear: left;
+   border: 2px solid purple;
+   margin: 2px;
+}
+
+
+/* ==========================================================================
+   POSICIONAMIENTO
+   ========================================================================== */
+
+/* 5. POSICIONAMIENTO RELATIVO Y SOLAPAMIENTO:
+   Coloca cinco párrafos en la página y aplica position: relative al tercero 
+   con desplazamientos de top: 20px y left: 40px. Observa que el espacio 
+   original del párrafo se conserva y que puede solaparse con los vecinos. 
+   Compara el resultado con position: static. 
+*/
+.ej5 {
+   position: relative; /*static*/
+   top: 20px;
+   left: 40px;
+}
+
+/* 6. CONTEXTO DE POSICIONAMIENTO ABSOLUTO:
+   Crea un contenedor con position: relative y dentro de él un elemento 
+   con position: absolute en cada esquina (usando top, right, bottom y left). 
+   Luego elimina el position: relative del contenedor y observa cómo cambia 
+   el contexto de posicionamiento. 
+*/
+.ej6-a {
+   position: relative;
+   border: 2px solid salmon;
+   top: 1em;
+   bottom: 1%;
+   right: 1em;
+   left: 2em;
+}
+.ej6-b {
+   position: absolute;
+   border: 2px solid red;
+   bottom: 0em;
+   right: 0em;
+}
+
+
+/* 7. ETIQUETA «OFERTA» SOBRE UNA TARJETA:
+   Diseña una tarjeta de producto que tenga una etiqueta «Oferta» posicionada 
+   de forma absoluta en la esquina superior derecha de la tarjeta, sin que 
+   interfiera con el flujo del resto del contenido. 
+*/
+.ej7 {
+   position: absolute;
+   padding: 1em 2em;
+   text-align: center;
+   border: 3px solid goldenrod;
+   background-color: bisque;
+}
+.ej7-oferta {
+   border: 3px solid rgb(131, 42, 42);
+
+   top: -1em;
+   right: -0.1em;
+   position: absolute;
+
+   color:white;
+   font-weight: bold;
+   background-color: rgb(131, 42, 42);
+}
+
+
+/* 8. ENCABEZADO FIJO CON POSITION: FIXED:
+   Implementa un encabezado fijo que permanezca visible en la parte superior 
+   de la página al hacer scroll. Asegúrate de que el contenido principal 
+   no quede oculto bajo el encabezado añadiendo el margin-top adecuado al <body>. 
+*/
+.ej8 {
+   position: fixed;
+   top: 0;
+   background-color: aqua;
+}
+
+body {
+   margin-top: 20%;
+}
+
+
+/* 9. ÍNDICE LATERAL CON POSITION: STICKY:
+   Crea una página con un índice de secciones en una barra lateral. 
+   Aplica position: sticky al índice con un valor de top adecuado para 
+   que se quede anclado al borde superior del viewport mientras el 
+   contenido de la página se desplaza. 
+*/
+.ej9 {
+   position: sticky;
+   top: 0;
+   background-color: grey;
+}
+
+/* 10. CONTROL DEL APILAMIENTO CON Z-INDEX:
+   Coloca tres elementos con position: absolute que se solapen parcialmente. 
+   Usa z-index para cambiar su orden de apilamiento. Comprueba que un valor 
+   mayor siempre queda por encima y experimenta con valores negativos. 
+*/
+.ej10-1 {
+   position: absolute;
+   z-index: -1;
+
+   width: 300px;
+   background-color: rgb(255, 0, 0);
+   border: 2px solid red;
+}
+.ej10-2 {
+   position: absolute;
+   z-index: 2;
+   
+   width: 200px;
+   background-color: green;
+   border: 2px solid green;
+}
+.ej10-3 {
+   position: absolute;
+   z-index: 3;
+   width: 300;
+   
+   background-color: blue;
+   border: 2px solid blue;
+}
+
+
+/* ==========================================================================
+   FLEXBOX
+   ========================================================================== */
+
+/* 11. EXPLORACIÓN DE FLEX-DIRECTION:
+   Crea un contenedor con seis elementos <div> de diferentes tamaños y 
+   activa display: flex. Experimenta con flex-direction en sus cuatro 
+   valores (row, row-reverse, column, column-reverse) y describe el efecto 
+   de cada uno con comentarios en el CSS. 
+
+   row: eje principal => horizontal, contenido por ese eje
+   row-reverse: eje principal => horizontal, contenigo por ese eje a la inversa
+   column: eje principal => vertical, contenido por ese eje
+   column-reverse: eje principal => vertical, contenido por ese eje a la inversa
+*/
+.ej11-a {
+   display: flex ;
+   flex-direction: column;
+   
+   width: 150px;
+   height: 100px;
+   border: 2px solid red;
+   background-color: red;
+}
+.ej11-b {
+   display: flex ;
+   flex-direction: column-reverse;
+
+   height: 100px;
+   width: 200px;
+   border: 2px solid green;
+   background-color: green;
+}
+.ej11-c {
+   display: flex ;
+   flex-direction: row-reverse;
+
+
+   width: 300px;
+   border: 2px solid blue;
+   background-color: blue;
+}
+
+
+/* 12. BARRA DE NAVEGACIÓN CON JUSTIFY-CONTENT Y ALIGN-ITEMS:
+   Construye una barra de navegación horizontal con Flexbox donde los 
+   enlaces queden distribuidos uniformemente usando justify-content: space-between. 
+   Añade align-items: center para centrarlos verticalmente si la barra 
+   tiene altura fija. 
+*/
+
+.ej12-ul {
+   align-items: center;
+   list-style: none;
+   display: flex;
+}
+
+.ej12-li {
+   justify-content: space-between;
+
+   margin: 5px;
+   padding: 5px;
+   border: 2px solid purple;
+   background-color: pink;
+}
+
+/* 13. LAYOUT DE TRES COLUMNAS CON FLEX Y FLEX-WRAP:
+   Diseña un layout de tres columnas donde la columna central tenga el 
+   doble de ancho que las laterales usando la propiedad flex con valores 
+   1, 2 y 1 respectivamente. Añade flex-wrap: wrap y reduce el ancho de 
+   la ventana para ver cómo se reorganizan los elementos. 
+*/
+.ej13 {
+   display: flex;
+   flex-wrap: wrap;
+}
+.ej13-a {
+   flex: 1;
+   background-color: red;
+}
+.ej13-b {
+   flex: 2;
+   background-color: green;
+}
+.ej13-c {
+   flex: 1;
+   background-color: blue;
+}
+
+/* 14. TARJETAS DE IGUAL ALTURA CON FLEXBOX ANIDADO:
+   Crea un panel de tarjetas en el que todas tengan la misma altura aunque 
+   su contenido sea de longitud distinta. Centra vertical y horizontalmente 
+   el contenido interno de cada tarjeta usando un segundo nivel de 
+   display: flex dentro de ellas. 
+*/
+.ej14 {
+   display: flex;
+}
+
+.ej14-div {
+   display: flex;
+   width: 150px;
+   height: 150px;
+
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+}
+
+.ej14-a {
+   border: 2px solid red;
+   background-color: lightcoral;
+}
+
+.ej14-b {   
+   border: 2px solid green;
+   background-color: lightgreen;
+}
+
+.ej14-c {
+   border: 2px solid blue;
+   background-color: lightblue;
+}
+
+.ej14-d {
+   border: 2px solid yellow;
+   background-color: lightyellow;
+}
+
+
+/* ==========================================================================
+   CSS GRID
+   ========================================================================== */
+
+/* 15. CUADRÍCULA BÁSICA CON REPEAT Y MINMAX:
+   Define una cuadrícula de tres columnas usando grid-template-columns: repeat(3, 1fr) 
+   y grid-auto-rows: minmax(80px, auto). Añade diez elementos y observa 
+   cómo se distribuyen automáticamente. Cambia el número de columnas a 
+   cuatro y describe el nuevo resultado. 
+*/
+.ej15 {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-auto-rows: minmax(80px, auto);
+}
+
+/* 16. POSICIONAMIENTO POR LÍNEAS DE CUADRÍCULA:
+   A partir de una cuadrícula 3×3, posiciona cuatro elementos usando 
+   grid-column y grid-row en forma abreviada (con /) de modo que uno 
+   ocupe la fila superior completa, otro la columna izquierda completa 
+   y los otros dos rellenen el espacio restante. 
+*/
+
+.ej16 {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   background-color: lightsalmon;
+}
+.ej16-a {
+   grid-column: 1/4;
+   grid-row: 1/2;
+   /*
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-row-start: 1;
+   grid-row-end: 1;*/
+   
+
+   background-color: red;
+}
+.ej16-b {
+   grid-column: 1 / 2;
+   grid-row: 1 / 4;   
+
+   background-color: green;
+}
+.ej16-c {
+   grid-column: 2 / 3;
+   grid-row: 2 / 4;   
+
+   background-color: blue;
+}
+.ej16-d {
+   grid-column: 3 / 4;
+   grid-row: 2 / 4;   
+
+   background-color: yellow;
+}
+
+/* 17. MAQUETACIÓN COMPLETA DE PÁGINA CON GRID:
+   Implementa la maquetación clásica de una página completa con CSS Grid: 
+   cabecera que ocupe las tres columnas, barra lateral izquierda, área 
+   de contenido principal (doble de ancho que la barra) y pie de página 
+   que ocupe todo el ancho. Usa las propiedades grid-column y grid-row 
+   para situar cada elemento. 
+*/
+.ej17 {
+   text-align: center;
+
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   background-color: lightsalmon;
+}
+.ej17-a {
+   grid-column: 1/4;
+   grid-row: 1/2;
+   background-color: red;
+}
+.ej17-b {
+   grid-column: 1 / 2;
+   grid-row: 2 / 3;   
+
+   background-color: green;
+}
+.ej17-c {
+   grid-column: 2 / 4;
+   grid-row: 2 / 3;   
+
+   background-color: blue;
+}
+.ej17-d {
+   grid-column: 1 / 4;
+   grid-row: 3 / 4;   
+
+   background-color: yellow;
+}
+
+/* 18. GALERÍA ADAPTATIVA CON AUTO-FIT Y MINMAX:
+   Crea una galería de imágenes usando grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 
+   y grid-auto-rows: minmax(150px, auto). Verifica que el número de columnas 
+   varía al cambiar el ancho de la ventana sin necesidad de media queries. 
+*/
+.ej18 {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+   grid-auto-rows: minmax(150px, auto);
+}
+
+
+/* ==========================================================================
+   DISEÑO ADAPTATIVO Y MEDIA QUERIES
+   ========================================================================== */
+
+/* 19. LAYOUT MOBILE-FIRST CON MEDIA QUERIES:
+   Parte de una maquetación de columna única pensada para móvil. 
+   Usando @media screen and (width >= 600px), convierte el layout en 
+   dos columnas con Flexbox cuando la pantalla sea suficientemente ancha. 
+   Añade una segunda media query para tres columnas a partir de 900px. 
+*/
+
+/*
+Base (móvil, < 600px):
+Columna única vertical para dispositivos móviles
+*/
+.ej19 {
+   display: flex;
+   flex-direction: column; /*Distruye el contenido verticalmente*/
+}
+
+/*
+Tabletas (≥ 600px):
+Cambia a disposición horizontal con 2 columnas
+*/
+@media screen and (width >= 600px) {
+   .ej19 {
+      flex-direction: row; /*Distribuye el contenido horizontalmente*/
+      flex-wrap: wrap; /*Permite saltos de línea*/
+   }
+   .ej19 p {
+      flex: 1 1 50%; /*Cada párrafo ocupa 50%, 2 columnas*/
+   }
+}
+
+/*
+Pantallas grandes (≥ 900px):
+Expande a 3 columnas
+*/
+@media screen and (width >= 900px) {
+   .ej19 p {
+      flex: 1 1 33%; /*Cada párrafo ocupa 33%, 3 columnas*/
+   }
+}
+
+/* 20. TIPOGRAFÍA ADAPTATIVA CON CALC() Y VW:
+   Crea una página con un titular cuyo tamaño de fuente se defina con 
+   la expresión calc(1.5rem + 3vw). Comprueba visualmente cómo varía al 
+   redimensionar la ventana. Luego añade una media query que, por encima 
+   de 1200px, establezca un tamaño fijo máximo para evitar que el título 
+   crezca indefinidamente. 
+*/
+.ej20 {
+   font-size: calc(1.5rem + 3vw);
+}
+
+@media screen and (width > 1200px) {
+   .ej20 {
+      font-size: 5em;
+   }
+}

@@ -1,0 +1,97 @@
+/*1. Selectores fundamentales*/
+p {
+    font-size: 0.95rem;
+}
+
+.destacado {
+    background-color: #fff3cd ;
+    border-left: 4px solid #f0ad4e;
+}
+
+#titular {
+    color: #1a237e;
+    font-size: 2rem;
+}
+
+[data-nuevo] {
+    background-color: #d4edda ;
+}
+
+a[href*="wikipedia"] {
+    color:  #006400;
+    border-bottom: 1px dashed green;
+}
+
+a[href$=".pdf"] {
+    color: #b71c1c;
+}
+
+/*2. Pseudoclases y pseudoelementos*/
+li:first-child {
+    font-weight: bold;
+}
+
+li:last-child {
+    color: #777;
+    font-style: italic;
+}
+
+tr:nth-child(even) {
+    background-color:  #e3f2fd;
+}
+
+
+p:not(.destacado) {
+    border-left: 3px solid #ccc;
+    padding-left: 0.6rem;
+}
+
+p.intro-texto::first-line {
+    font-weight: bold;
+    color: #1a237e;
+}
+
+p.capitular::first-letter {
+    font-size: 3em;
+    float: left;
+    line-height: 0.8;
+    margin-left: 4px;
+}
+
+td:hover {
+    background-color: #fff9c4;
+}
+
+/*3. Combinadores*/
+.cita em {
+    color: #6a1b9a;
+    font-style: normal;
+}
+
+.lista-compacta > * {
+    list-style-type: "→ ";
+}
+
+h2 + p {
+    color: #555;
+    font-style: italic;
+}
+
+h3 ~ p {
+    padding-left: 1rem;
+}
+
+.etiqueta.urgente {
+    background-color: #f44336;
+    color: white;
+}
+
+h2, h3 {
+    font-family: Georgia, serif;
+    border-bottom: 2px solid #ddd;
+}
+
+.tarjeta > * {
+    margin-bottom: 0.5rem;
+}
+

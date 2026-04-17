@@ -1,0 +1,351 @@
+/* ==========================================================================
+   VALORES Y COLORES
+   ========================================================================== */
+
+/* 1. Cuatro formas de especificar un color:
+   Crea un párrafo cuyo color de texto sea rojo, especificándolo de cuatro formas distintas: 
+   nombre (red), hexadecimal de 6 dígitos (#ff0000), hexadecimal abreviado (#f00) y rgb().
+*/
+#rojo {
+    color: red;
+    color: #ff0000;
+    color: #f00;
+    color: rgb(red,0, 0);
+}
+
+/* 2. Transparencia con rgba():
+   Crea un div con fondo azul semitransparente usando rgba() y compara el resultado 
+   con el mismo color sin transparencia.
+*/
+.div2 {
+    background-color: rgba(0, 0, 255, 0.15);
+}
+.div2-1 {
+    background-color: rgba(0, 0, 255, 1);
+}
+
+/* 3. Unidades de longitud:
+   Escribe reglas CSS que usen longitudes en diferentes unidades (px, em, pt, cm) 
+   para el font-size de cuatro párrafos distintos y observa las diferencias visuales.
+*/
+#p3 {
+    font-size: 5px;
+}
+#p3-1 {
+    font-size: 2em;
+}
+#p3-2 {
+    font-size: 2pt;
+}   
+#p3-3 {
+    font-size: 2cm;
+}
+
+/* ==========================================================================
+   FONDOS Y BORDES
+   ========================================================================== */
+
+/* 4. Repetición de imagen de fondo:
+   Crea un div con una imagen de fondo que se repita solo horizontalmente, 
+   con background-repeat: repeat-x.
+*/
+.img-bat {
+   width: 600px;
+   background-image: url(batman-matt-fraction.jpg);
+   background-size: 300px; 
+   background-repeat: repeat-x;
+}
+
+/* 5. Posición de imagen de fondo:
+   Crea una caja con imagen de fondo sin repetición y experimenta con background-position 
+   usando valores como center, top right y coordenadas en píxeles.
+*/
+.attack {
+   color: white;
+   border: 4px green solid ;
+   
+   background-image: url(attack\ on\ titan.jpeg);
+   background-size: 700px;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+/* 6. Estilos de borde:
+   Crea cuatro cajas que muestren los cuatro estilos de borde más comunes: 
+   solid, dashed, dotted y double, cada una con un color diferente.
+*/
+.box6-1 {
+   border: 3px solid blue;
+}
+.box6-2 {
+   border: 3px dashed green;
+}
+.box6-3 {
+   border: 3px dotted red;
+}
+.box6-4 {
+   border: 3px double purple;
+}
+
+/* 7. Bordes redondeados:
+   Diseña una tarjeta con esquinas redondeadas usando border-radius y experimenta con 
+   distintos valores (en px y em) para lograr desde esquinas ligeramente redondeadas 
+   hasta una forma ovalada.
+*/
+.box7 {
+   border: 5px solid salmon;
+   border-radius: 100px;
+}
+
+/* ==========================================================================
+   TAMAÑO Y DESBORDAMIENTO
+   ========================================================================== */
+
+/* 8. Propiedad overflow:
+   Crea un div con width y height fijos en píxeles e introduce texto suficiente para que desborde. 
+   Prueba los valores visible, hidden, scroll y auto y anota las diferencias.
+
+- Visible: permite visualizar todo el texto, sean cuales sean las dimensiones
+- Hidden: no permite visualizar el texto si las dimensiones no son las correctas
+- Scroll: si no cabe el texto, crea una scroll bar
+- Auto: muestra el texto automáticamente, independientemente de las dimensiones
+*/
+.ej8-1 {
+   overflow: visible;
+   border: 3px solid red;
+   width: 600px;
+   height: 250px;
+}
+.ej8-2 {
+   overflow: hidden;
+   border: 3px solid red;
+   width: 600px;
+   height: 100px;
+}
+.ej8-3 {
+   overflow: scroll;
+   border: 3px solid red;
+   width: 600px;
+   height: 200px;
+}
+.ej8-4 {
+   overflow: auto;
+   border: 3px solid red;
+   width: 600px;
+   height: 200px;
+}
+
+
+/* 9. width vs max-width:
+   Crea una imagen con width: 100% y otra con max-width: 100% dentro de un contenedor 
+   más estrecho que la imagen. Observa cómo se comportan de forma diferente.
+*/
+#ej9-1 {
+   width: 100%;
+   border: 3px solid red;
+}
+#ej9-2 {
+   max-width: 100%;
+   border: 3px solid blueviolet;
+}
+
+
+/* 10. Altura mínima con min-height:
+   Crea una caja con min-height: 100px e introduce poco contenido primero y luego mucho contenido. 
+   Comprueba cómo crece la caja en el segundo caso.
+*/
+.ej10 {
+   border: 2px solid slateblue;
+   min-height: 100px;
+}
+
+/* 11. Unidades de viewport:
+   Crea un div que ocupe el 50% del ancho del viewport (50vw) y el 30% del alto del viewport (30vh). 
+   Redimensiona la ventana y observa cómo cambia.
+*/
+.ej11 {
+   border: 2px solid darkgoldenrod;
+   width: 50vw;
+   height: 30vh;
+}
+
+/* ==========================================================================
+   MODELO DE CAJAS
+   ========================================================================== */
+
+/* 12. content-box vs border-box:
+   Crea dos cajas con los mismos valores de width, padding y border, pero una con 
+   box-sizing: content-box y la otra con box-sizing: border-box. Compara sus tamaños reales.
+
+- Content-box: expande horizontalmente? añade padding fuera del ancho definido
+- Border-box: expande verticalmente? Incluye el contenido dentro de width
+*/
+.ej12-1 {
+   border: 2px solid salmon;
+   width: 400px;
+   padding: 100px;
+   box-sizing: content-box;
+}
+.ej12-2 {
+   border: 2px solid salmon;
+   width: 400px;
+   padding: 100px;
+   box-sizing: border-box;
+}
+
+/* 13. Colapso de márgenes:
+   Crea tres elementos de bloque apilados verticalmente y experimenta con márgenes 
+   positivos y negativos para ver el colapso de márgenes en acción.
+*/
+.ej13-1 {
+   border: 3px solid sandybrown;   
+   display: block;
+   margin: -2%;
+}
+
+.ej13-2 {
+   border: 3px solid rebeccapurple;   
+   display: block;
+   margin: 3%;
+}
+
+.ej13-3 {
+   border: 3px solid greenyellow;   
+   display: block;
+   margin-top: -4%;
+}
+
+/* 14. Márgenes y rellenos por lado:
+   Diseña una caja con margin y padding distintos en cada lado, usando las propiedades 
+   individuales (margin-top, padding-left, etc.).
+*/
+.ej14 {
+   border: 3px solid darkred;
+
+   margin-top: 5%;
+   margin-right: 10%;
+   margin-bottom: 5%;
+   margin-left: 10%;
+
+   padding-top: 5%;
+   padding-right: 10%;
+   padding-bottom: 5%;
+   padding-left: 10%;
+}
+
+/* 15. margin vs padding:
+   Crea una caja con borde y relleno, y verifica visualmente la diferencia entre 
+   margin (espacio fuera del borde) y padding (espacio dentro del borde).
+*/
+.ej15 {
+   border: 3px dashed deepskyblue;
+   margin: 10%;
+   padding: 10%;
+}
+
+/* ==========================================================================
+   DISPLAY Y POSICIONAMIENTO
+   ========================================================================== */
+
+/* 16. inline vs inline-block:
+   Coloca tres elementos span en línea y luego cámbialo a display: inline-block 
+   para poder aplicarles width, height y padding sin que se solapen.
+*/
+
+#ej16-1 {
+   display: inline-block;
+
+   margin: 5px;
+   padding: 5px;
+   width: 35px;
+   height: 25px;
+   background-color: lightblue;
+   border: 2px solid blue;
+}
+#ej16-2 {
+   display: inline-block;
+
+   margin: 5px;
+   padding: 5px;
+   width: 35px;
+   height: 25px;
+   background-color: lightcoral;
+   border: 2px solid red;
+}
+#ej16-3 {
+   display: inline-block;
+
+   margin: 5px;
+   padding: 5px;
+   width: 35px;
+   height: 25px;
+   background-color: lightgreen;
+   border: 2px solid green;
+}
+
+
+/* 17. Barra de navegación horizontal:
+   Crea una barra de navegación horizontal usando display: inline-block en los 
+   elementos de una lista (li), añadiendo padding para que los enlaces sean más clicables.
+*/
+#ej17 li {
+   margin-left: 3%;
+   padding: 2%;
+
+   display: inline-block;
+   border: 2px solid red;
+   background-color: salmon;
+}
+
+/* 18. position: relative vs position: absolute:
+   Crea un elemento con position: relative y desplázalo 20px hacia abajo y 30px a la derecha. 
+   Compara con position: absolute dentro de un contenedor padre.
+
+   Absolute se ajusta al tamaño del texto
+*/
+.ej18-1 {
+   border: 2px solid lightcoral;
+
+   position: relative;
+   top: 20px;
+   left: 30px;
+   /*margin-top: 20px; /*Agrando el margen superior => desplazo hacia abajo*/
+   /*margin-left: 30px; /*Agrando el margen izquierdo => desplazo hacia la izquierda*/
+}
+.ej18-2 {
+   border: 2px solid lightseagreen;
+
+   position: absolute;
+   top: 20px;
+   left: 30px;
+   /*margin-top: 20px; /*Agrando el margen superior => desplazo hacia abajo*/
+   /*margin-left: 30px; /*Agrando el margen izquierdo => desplazo hacia la izquierda*/}
+
+/* 19. Encabezado fijo con position: fixed:
+   Crea un encabezado fijo en la parte superior de la página con position: fixed 
+   que permanezca visible al hacer scroll.
+*/
+.ej19 {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: red;
+   overflow: scroll;
+}
+
+
+
+/* ==========================================================================
+   FUNCIONES Y !IMPORTANT
+   ========================================================================== */
+
+/* 20. calc() e !important:
+   Usa calc() para definir el ancho de un div como calc(100% - 40px) o calc(50vw - 2em). 
+   Además, añade !important a alguna propiedad en conflicto para observar cómo altera la cascada.
+*/
+.ej20, .ej18-1 {
+   border: 2px solid yellowgreen;
+   width: calc(100% - 40px) !important;
+   
+}

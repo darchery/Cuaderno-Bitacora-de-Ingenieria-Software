@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de investigador</title>
+    <!--1. Enlace de la hoja de estilos
+           Descomenta la línea correspondiente en el <head> del HTML para 
+           enlazar tu archivo estilos.css como hoja de estilos externa.-->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header id="cabecera">
+        <h1>Dra. Elena Morales</h1>
+        <p class="subtitulo">Investigadora en Inteligencia Artificial · Universidad de Málaga</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#publicaciones">Publicaciones</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+    
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <!--"https://placehold.co/200x200"-->        
+            <img src="vagabond.jpeg"  alt="Foto de perfil de Elena Morales" width="350">
+            <p>
+                Soy profesora titular e investigadora especializada en aprendizaje automático
+                y procesamiento del lenguaje natural. Mi trabajo se centra en el desarrollo de
+                modelos eficientes y explicables para aplicaciones en el ámbito de la salud.
+            </p>
+            <p>
+                Antes de incorporarme a la Universidad de Málaga, realicé una estancia
+                postdoctoral en el <strong>MIT Computer Science &amp; AI Laboratory</strong>
+                durante tres años.
+            </p>
+        </section>
+
+        <section id="publicaciones">
+            <h2>Publicaciones recientes</h2>
+            <ul class="lista-publicaciones">
+                <li>
+                    <span class="autores">Morales, E., Ruiz, J., &amp; Chen, L.</span>
+                    <span class="titulo-pub">«Efficient Transformers for Clinical NLP»</span>
+                    <span class="revista">Nature Machine Intelligence, 2024.</span>
+                </li>
+                <li>
+                    <span class="autores">Morales, E. &amp; García, P.</span>
+                    <span class="titulo-pub">«Explainability in Medical Image Classification»</span>
+                    <span class="revista">IEEE Transactions on Medical Imaging, 2023.</span>
+                </li>
+                <li>
+                    <span class="autores">Morales, E., López, A., Ruiz, J. &amp; Santos, M.</span>
+                    <span class="titulo-pub">«A Survey on Federated Learning for Healthcare»</span>
+                    <span class="revista">ACM Computing Surveys, 2023.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos activos</h2>
+
+            <div class="tarjeta-proyecto">
+                <h3>MediAI</h3>
+                <p>Desarrollo de modelos de lenguaje especializados para el diagnóstico
+                asistido en entornos hospitalarios. Financiado por el Plan Nacional de I+D.</p>
+                <p class="estado activo">Estado: Activo</p>
+            </div>
+
+            <div class="tarjeta-proyecto">
+                <h3>FairLearn-Health</h3>
+                <p>Análisis y mitigación de sesgos en sistemas de IA aplicados a poblaciones
+                diversas. Proyecto europeo Horizon 2024.</p>
+                <p class="estado activo">Estado: Activo</p>
+            </div>
+
+            <div class="tarjeta-proyecto">
+                <h3>ClinicalBERT-ES</h3>
+                <p>Adaptación y evaluación de modelos BERT al español clínico, en colaboración
+                con el Hospital Regional Universitario de Málaga.</p>
+                <p class="estado finalizado">Estado: Finalizado</p>
+            </div>
+
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Para consultas académicas o de colaboración:</p>
+            <ul class="lista-contacto">
+                <li>Correo: <a href="mailto:e.morales@uma.es">e.morales@uma.es</a></li>
+                <li>Despacho: Edificio de Investigación Ada Lovelace, planta 3, despacho 312</li>
+                <li>Horario de tutorías: martes y jueves de 10:00 a 12:00</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Elena Morales · Universidad de Málaga</p>
+    </footer>
+
+</body>
+</html>

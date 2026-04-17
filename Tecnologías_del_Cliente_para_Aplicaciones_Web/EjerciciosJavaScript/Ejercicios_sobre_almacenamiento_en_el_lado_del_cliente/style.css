@@ -1,0 +1,72 @@
+#claro {
+    background-color: whitesmoke;
+    color: rgb(66, 65, 65);
+    cursor: pointer;
+}
+
+#oscuro {
+    background-color: rgb(66, 65, 65);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.theme-claro {
+    background-color: whitesmoke;
+    color: rgb(66, 65, 65);
+}
+
+.theme-oscuro{
+    background-color: rgb(66, 65, 65);
+    color: whitesmoke;
+}
+
+.elemento-carrito {
+    display: flex;
+    width: max-content;
+}
+.elemento-carrito p {
+    margin: 5px;
+}
+.boton-eliminar {
+    cursor: pointer;  
+    padding: 0.5em;    
+}
+ 
+
+:root {
+    --color-acento: blue;
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-acento);
+}
+
+button {
+    background-color: var(--color-acento);
+    cursor: pointer;
+}
+
+a {
+    color: var(--color-acento);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--color-acento);
+}
+
+.buscador {
+    display: flex;
+    width: max-content;
+}
+
+.form-partes {
+    display: flex;
+}
+.form-partes label {
+    width: 5em;
+    text-align: left;
+}
+.form-partes input {
+    flex: 0.4;
+    width: 1em;
+}

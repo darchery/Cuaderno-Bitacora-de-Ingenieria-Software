@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Juego de adivinar número</title>
+
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+    }
+
+    .form input[type="number"] {
+      width: 200px;
+    }
+
+    .ultimoResultado {
+      color: white;
+      padding: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Juego de adivinar número</h1>
+
+  <p>
+    Hemos seleccionado un número aleatorio entre 1 y 100. 
+    Intenta adivinarlo en 10 turnos o menos. 
+    Te diremos si tu suposición fue demasiado alta o 
+    demasiado baja.
+  </p>
+
+  <div class="form">
+    <label for="campoIntento">Enter a guess: </label>
+    <input type="number" min="1" max="100" required id="campoIntento" class="campoIntento" />
+    <input type="submit" value="Submit guess" class="enviarIntento" />
+  </div>
+
+  <div class="resultParas">
+    <p class="intentos"></p>
+    <p class="ultimoResultado"></p>
+    <p class="altoOBajo"></p>
+  </div>
+
+  <script>
+    let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+    const intentos = document.querySelector(".intentos");
+    const ultimoResultado = document.querySelector(".ultimoResultado");
+    const lowOrHi = document.querySelector(".altoOBajo");
+
+    const enviarIntento = document.querySelector(".enviarIntento");
+    const campoIntento = document.querySelector(".campoIntento");
+
+    let numeroIntentos = 1;
+    let botonReiniciar;
+
+  </script>
+</body>
+
+</html>

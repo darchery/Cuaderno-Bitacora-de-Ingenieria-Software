@@ -1,0 +1,34 @@
+.semaforo{
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 120px;
+    margin: 10px;
+    background-color: rgb(40, 35, 35);
+    /*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    */
+}
+
+.luz {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 20px auto;
+}
+
+.apagada {
+    background-color: gray;
+}  
+.roja {
+    background-color: red;
+}
+.amarilla {
+    background-color: goldenrod;
+}
+.verde {
+    background-color: green;
+}

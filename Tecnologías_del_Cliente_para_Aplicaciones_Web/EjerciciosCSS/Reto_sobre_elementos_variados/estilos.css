@@ -1,0 +1,219 @@
+/*2. Estilos generales del documento
+
+    -Establece un color de fondo para el body usando notación hexadecimal de 6 dígitos.
+    -Define el color del texto principal usando la función rgb().
+    -Fija el tamaño de fuente base del documento en 16px.
+    -Establece un margen de 0 y un relleno de 0 para el elemento body, 
+     y a continuación añade un margen superior e inferior de 1em y un 
+     margen lateral automático para centrar el contenido. Usa la forma 
+     abreviada de margin en ambos casos.
+    -Limita el ancho máximo del contenido con max-width para que la 
+     página no se extienda excesivamente en pantallas grandes.
+*/
+body {
+    background-color: #e0ffff;
+
+    color: rgb(100, 0, 5);
+    font-size: 16px;
+
+    margin: 0;
+    padding: 0;
+    margin: 1em auto; /* Forma abreviada: 1em => arriba-abajo y auto => der/izq */
+
+    max-width: 800px;
+}
+
+/* 3. Cabecera
+
+    - Aplica un color de fondo a #cabecera usando un color con nombre (named color).
+    - Establece un relleno uniforme de 2em con la propiedad abreviada padding.
+    - Centra el texto de la cabecera.
+    - Aplica un color claro al texto del h1 usando la forma hexadecimal abreviada
+    de tres dígitos.    
+    - Reduce el tamaño del texto del elemento con clase .subtitulo al 90% del 
+    tamaño del elemento padre usando porcentajes 
+*/
+#cabecera {
+    background-color: lightgoldenrodyellow;
+
+    padding: 2em;
+
+    text-align: center;
+
+}
+#cabecera h1 {
+    color: #189;
+}
+#cabercera.subtitulo {
+    font-size: 90%;
+}
+
+/*4. Barra de navegación
+
+    - Elimina los puntos de la lista (list-style: none) y ajusta márgenes y 
+    rellenos del elemento nav ul a 0.
+    - Aplica display: inline-block a los elementos nav li para que aparezcan 
+    en horizontal.
+    - A los enlaces nav a aplica:
+        1. Elimina el subrayado.
+        2. Añade un relleno de 0.75em arriba y abajo, y de 1.25em a los lados, 
+        usando la forma abreviada de dos valores de padding.
+        3. Haz que el enlace se comporte como inline-block para que el área de
+        activación cubra todo el relleno.
+        4. Define un color de texto claro.
+    - Usa la pseudoclase :hover para cambiar el color de fondo del enlace cuando 
+    el ratón pase por encima.
+*/
+nav ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    text-decoration: none;
+    padding: 0.75em 1.25em;
+    display: inline-block;
+    color: rgb(100, 0, 5);
+    border: 2px solid rgb(6, 39, 58);
+}
+
+nav a:hover {
+    color: goldenrod;
+}
+
+/*
+5. Secciones de contenido
+
+    - Aplica a todos los elementos section un margen inferior de 2em y un relleno 
+    de 1.5em.
+    - Añade un borde inferior de 2px, estilo solid y color a elección a cada 
+    section.
+    - Aplica border-radius de 0.4em a las secciones para redondear sus esquinas.
+*/
+section {
+    margin-top: 2em;
+    padding: 1.5em;
+
+    border-bottom: 2px solid rgb(6, 39, 58);
+
+    border-radius: 0.4em;
+}
+
+/*
+6. Imagen de perfil
+
+    - Aplica a la imagen dentro de #sobre-mi un max-width del 100% para que 
+    nunca desborde su contenedor.
+    - Establece su display a block y usa margin con valor automático para 
+    centrarla horizontalmente.
+    - Añade un border-radius del 50% para que se muestre como un círculo.
+    - Añade un borde solid de 4px con un color a elección.
+*/
+#sobre-mi img {
+    max-width: 100%;
+
+    display: block;
+    margin: auto;
+
+    border-radius: 50%;
+
+    border: 4px solid  rgb(6, 39, 58);
+}
+
+
+/*
+7. Lista de publicaciones
+
+    - Elimina el estilo de lista por defecto de .lista-publicaciones y ajusta su 
+    relleno a 0.
+    - Cada ítem de la lista (li) debe tener:
+        1. Un borde izquierdo solid de 4px con un color distintivo.
+        2. Un relleno izquierdo de 1em.
+        3. Un margen inferior de 1em.
+    - El elemento .titulo-pub debe mostrarse en negrita.
+    - El elemento .revista debe mostrarse con un color más tenue que el texto 
+    principal, usando rgba() con algo de transparencia.
+*/
+.lista-publicaciones {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-publicaciones li {
+    border-left: 4px solid rgb(95, 25, 25);
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+.titulo-pub {
+    font-weight: bold;
+}
+.revista {
+    color: rgb(145, 89, 91);
+}
+
+
+/*
+8. Tarjetas de proyecto
+
+    - Dale a .tarjeta-proyecto un fondo blanco o claro, un relleno de 1.25em,
+    un borde solid fino y bordes redondeados con border-radius.
+    - Añade una separación entre tarjetas con margin-bottom.
+    - El elemento con clase .estado debe mostrarse como inline-block con relleno
+    horizontal y vertical, y bordes redondeados, simulando una etiqueta (badge).
+    - El elemento .activo debe tener un fondo verde y texto blanco.
+    - El elemento .finalizado debe tener un fondo gris y texto blanco.
+*/
+.tarjeta-proyecto {
+    background-color: whitesmoke;
+    padding: 1em;
+    border: 1px solid rgb(6, 39, 58);
+    border-radius: 15px;
+    
+    margin-bottom: 0.5em;
+}
+.estado {
+    display: inline-block;
+    padding: 1em 1.5em;
+    border: 1px solid rgb(6, 39, 58);
+    border-radius: 15px;
+}
+.activo {
+    color: white;
+    background-color: green;
+}
+.finalizado {
+    color: white;
+    background-color: gray;
+}
+
+/*
+9. Desbordamiento controlado
+    - Añade a .tarjeta-proyecto la propiedad overflow: hidden para evitar que 
+    algún contenido eventual desborde la caja.
+*/
+.tarjeta-proyecto {
+    overflow: hidden;
+}
+
+/*
+10. Pie de página
+
+    - Centra el texto del footer.
+    - Aplica un color de fondo oscuro y un color de texto claro.
+    - Añade relleno vertical con la propiedad abreviada de padding.
+    - Usa margin-top con un valor en em para separarlo del contenido anterior.
+*/
+footer {
+    text-align: center;
+
+    background-color: rgb(0, 42, 88);
+    color: white;
+
+    padding: 1em;
+
+    margin-top: 2em;
+}

@@ -1,0 +1,486 @@
+<!-- 
+Cree un sitio web con una estructura dada por elementos semánticos de 
+estructura (header, footer, nav, main, aside). La cabecera se referirá a que es 
+un sitio web con explicación de los elementos de varios lenguajes relacionados con el desarrollo web. 
+En el pie de página se explicará el nombre de los autores y el contexto de la 
+página (asignatura, titulación, universidad, año, …). 
+En la sección de navegación se incluirán otras páginas dentro del 
+mismo sitio dedicadas a otros lenguajes (CSS, JavaScript, TypeScript, …) 
+pero sin enlaces reales. En la sección aside se incluirán otras páginas 
+externas con información sobre esos mismos lenguajes y HTML, pero sin enlaces.
+En la sección main se incluirá el contenido del documento HTML desarrollado 
+en el último ejercicio, usando los elementos section y article. 
+-->
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+ <head>
+
+ <meta charset="utf-8" />
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <title>Estructura: Elementos Semánticos de bloques</title>
+
+ <!-- <link rel="stylesheet" href="plantilla-basica-html.css"> -->
+
+ <!-- <script src="plantilla-basica-html.js" defer></script> -->
+
+ </head>
+
+ <body>
+   <h1>Estructura: Elementos Semánticos de bloques</h1>
+   <a id="inicio"></a>
+    <header> 
+      <p>
+         Este es un sitio web con la explicación de los elementos de varios 
+         lenguajes relacionados con el desarrollo web.
+      </p>
+      <figure>
+         <img src="images/html.jpg" alt="HTML" width="550" >
+         <figcaption>Fig. 1. Imagen representativa de HTML.</figcaption>
+      </figure>
+    </header>
+    <hr>
+    <nav>
+      <p>
+         Sección de lenguajes de diseño web
+      </p>
+      <ul>
+         <li> 
+            <a href="">
+               CSS
+            </a>
+         </li>
+         <li>
+            <a href="">
+               JavaScript
+            </a>
+         </li>
+         <li>
+            <a href="pagina_vacia_typescript.html">
+               TypeScript
+            </a>
+         </li>
+      </ul>
+    </nav>
+    <hr>
+    <main>
+      <article>
+         <header>
+            <h1>Artículo sobre HTML</h1>
+         </header>
+
+         <section>
+            <a id="historia"></a>
+            <h2> Historia de <abbr title="Hipertext Markup Language">HTML</abbr> </h2>
+            <p> <b>HTML(Hipertex Markup Language)</b>  es un lenguaje de etiquetas que define el contenido y la estructura de las páginas web.
+            Creado por <i> Tim Berners-Lee</i>.</p>
+            
+            <h3> Inicio </h3>
+            <p>En el inicio de <b><abbr title="Hipertext Markup Language">HTML</abbr></b>...</p>
+            
+            <h3> Auge </h3>
+            <p>En el auge de <b><abbr title="Hipertext Markup Language">HTML</abbr></b>...</p>
+            
+            <h3> Desarrollo</h3>
+            <p>En el desarrollo de <b><abbr title="Hipertext Markup Language">HTML</abbr></b>...</p>
+            
+            <h3> Actualidad</h3>
+            <p>En la actualidad de <b><abbr title="Hipertext Markup Language">HTML</abbr></b>...</p>
+            <a href="#historia">Volver a la historia</a>
+         </section>
+         <hr>
+         <section>
+            <a id="caracteristicas"></a>
+            <h2>Características principales de <abbr title="Hipertext Markup Language">HTML</abbr></h2>
+            <h3>Ventajas de <abbr title="Hipertext Markup Language">HTML</abbr></h3>
+            <dl>
+               <dt>Fácil de aprender y usar:</dt>
+                  <dd>Tiene una sintaxis sencilla, ideal para principiantes en el desarrollo web.</dd>
+               <dt>Compatibilidad universal:</dt>
+                  <dd> Funciona nativamente en todos los navegadores web (Chrome, Firefox, Safari, Edge, etc.) y plataformas.</dd>
+               <dt>Gratuito y estándar abierto:</dt> 
+                  <dd>No requiere licencias ni software especial, siendo mantenido por el W3C.</dd>
+            </dl>
+            <a href="#caracteristicas">Volver a las caracteristicas</a>
+         </section>
+         <section>
+            <a id="elementos"></a>
+            <h3>Elementos de <abbr title="Hipertext Markup Language">HTML</abbr></h3>
+            <ul>
+               <li>Metadatos del Documento</li>
+                  <ul>
+                        <li>title</li>
+                        <li>meta</li>
+                        <li>link</li>
+                        <li>style</li>
+                  </ul>
+               <li>Estructura y Secciones</li>
+                  <ul>
+                        <li>header</li>
+                        <li>nav</li>
+                        <li>main</li>
+                        <li>section</li>
+                        <li>article</li>
+                        <li>footer</li>
+                  </ul>
+               <li>Agrupacion de Contenidos</li>
+                  <ul>
+                        <li>p</li>
+                        <li>Listas</li>
+                           <ul>
+                              <li>ul</li>
+                              <li>ol</li>
+                              <li>li</li>
+                           </ul>
+                        <li>div</li>
+                  </ul>
+               <li>Texto en Línea</li>
+                  <ul>
+                        <li>a</li>
+                        <li>span</li>
+                        <li>strong</li>
+                        <li>em</li>
+                        <li>code</li>
+                  </ul>
+               <li>Incrutación de Multimedia</li>
+                  <ul>
+                        <li>img</li>
+                        <li>video</li>
+                        <li>audio</li>
+                        <li>iframe</li>
+                  </ul>
+               <li>Tablas</li>
+                  <ul>
+                        <li>table</li>
+                        <li>tr</li>
+                        <li>td</li>
+                        <li>th</li>
+                  </ul>
+               <li>Formularios</li>
+                  <ul>
+                        <li>form</li>
+                        <li>input</li>
+                        <li>button</li>
+                        <li>select</li>
+                        <li>textarea</li>
+                  </ul>
+            </ul>
+            <a href="#elementos">Volver a los elementos</a>
+         </section>
+         <section>
+            <a id="versiones"></a>
+            <h3>Versiones de <abbr title="Hipertext Markup Language">HTML</abbr></h3>
+            <dl>
+               <dt><abbr title="Hipertext Markup Language">HTML</abbr> 1.0/2.0 (1991-1995):</dt>
+                  <dd>Primeras versiones básicas, enfocadas en texto y enlaces. El 2.0 fue el primer estándar oficial.</dd>
+               <dt><abbr title="Hipertext Markup Language">HTML</abbr> 3.2 (1997):</dt>
+                  <dd>Introdujo mejoras como tablas, applets de Java y texto alrededor de imágenes.</dd>
+               <dt><abbr title="Hipertext Markup Language">HTML</abbr> 4.01 (1999):</dt>
+                  <dd>Versión estable que introdujo la separación de contenido y estilo mediante CSS, siendo muy popular durante años.</dd>
+               <dt>XHTML 1.0 (2000):</dt>
+                  <dd>Una versión de HTML basada en XML, con reglas sintácticas mucho más estrictas.</dd>
+               <dt><abbr title="Hipertext Markup Language">HTML</abbr>5 (2014-actualidad):</dt>
+                  <dd>La versión actual, diseñada para aplicaciones web modernas. Incorpora video/audio nativo, Canvas, geolocalización y etiquetas semánticas.</dd>
+               <dt><abbr title="Hipertext Markup Language">HTML</abbr> Living Standard:</dt>
+                  <dd>Actualmente, HTML no se lanza por números enteros (como 6.0), sino que es una especificación viva (actualizada continuamente por el WHATWG).</dd>
+            </dl>
+            <a href="#versiones">Volver a las versiones</a>
+         </section>
+         <hr>
+         <section>
+            <a id="ejemplos"></a>
+            <h2>Ejemplos de código <abbr title="Hipertext Markup Language">HTML</abbr></h2>
+            <h3> Ejemplo 1:</h2>
+            <pre><code>const para = document.querySelector('p');
+
+               para.onclick = function() {
+                  alert('Owww, stop poking me!');
+               }</code></pre>
+
+            <h3>Ejemplo 2:</h2>
+            <pre>
+               <code>
+                  private int contador = 0;
+               </code>
+            </pre>
+
+            <h3>Ejemplo 3:</h2>
+            <pre>
+               <code>
+                  void espacio():
+                        print();
+                  
+               </code>
+            </pre>
+            <a href="#ejemplos">Volver a los ejemplos</a>
+         </section>
+         <section>
+            <a id="citas"></a>
+            <h3>Citas en párrafos indepedientes</h3>
+            <p>Citas de Tim Berners:</p>
+               <blockquote
+                  cite="https://es.wikiquote.org/wiki/Tim_Berners-Lee">
+                  <p>
+                        <i>"You affect the world by what you browse"</i>
+                  </p>
+               </blockquote>
+               <p>
+                  De acuerdo con
+                  <a href="https://es.wikiquote.org/wiki/Tim_Berners-Lee">
+                  <cite>Wikiquote</cite></a>
+               </p> 
+            <h3>Citas citas integradas en el mismo párrafo.</h3>
+               <p> Citas anidadas: <br>
+                  <q
+                        cite="https://es.wikiquote.org/wiki/Tim_Berners-Lee">
+                        The original idea of the web was that it should be a collaborative space where you can communicate through sharing information        </q>
+                  </q>
+               <br>
+                  <q 
+                        cite="https://es.wikiquote.org/wiki/Tim_Berners-Lee">
+                        Data is a precious thing and will last longer than the systems themselves
+                  </q>
+               </p>
+               <p>
+                  De acuerdo con
+                  <a href="https://es.wikiquote.org/wiki/Tim_Berners-Lee">
+                  <cite>Wikiquote</cite></a>
+               </p>
+            <a href="#citas">Volver a las citas</a>
+         </section>
+         <hr>
+         <section>
+            <a id="imagenes"></a>
+            <h2>Enlaces a imágnes externas de Tim Berners-Lee</h2>
+            <p>Imagen 1: </p>
+            <a href="images/imagen1.jpg"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReYt3OBl4VevAxueoGHFTGFhywGVnjihnYBA&s" target="_blank"> </a>
+            <p>Imagen 2:</p>
+            <a href="images/imagen2.jpg"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPdtqDFTIPZOEwcHRE8bIHJivnKpmXGxjtfQ&s" target="_blank"> </a>
+            <br>
+            <a href="#imagenes">Volver a las imagenes</a>
+         </section>
+         <hr>
+         <section>
+            <a id="video"></a>
+            <h2>Video de Tim Berners-Lee en el CERN</h2>
+            <video
+               controls
+               width="700"
+               ><source src="CERN-VIDEO-2009-006-001-720p.mp4" type="video/mp4" />
+                  <p>
+                        Su navegador no es capar de reproducir vídeo HTML.
+                  </p>
+            </video>
+            <br>
+            <a href="#video">Volver al vídeo</a>
+         </section>
+         <hr>
+         <section>
+            <h2>Tabla comparativa de versiones de HTML</h2>
+            <table>
+               <theader>Comparación de versiones</theader>
+               <tr>
+                  <th>Version<th>Año<th>Características
+               </tr>
+               <tbody>
+                  <tr>
+                     <td>HTML 1.0/2.0<td>1991-1995<td>Primeras versiones básicas, enfocadas en texto y enlaces. El 2.0 fue el primer estándar oficial.
+                  </tr>
+                  <tr>
+                     <td>HTML 3,2<td>1997<td>Introdujo mejoras como tablas, applets de Java y texto alrededor de imágenes.
+                  </tr>
+                  <tr>
+                     <td>HTML 4.01<td>1999<td>Versión estable que introdujo la separación de contenido y estilo mediante CSS, siendo muy popular durante años.
+                  </tr>
+                  <tr>
+                     <td>XHTML 1.0<td>2000<td>Una versión de HTML basada en XML, con reglas sintácticas mucho más estrictas.
+                  </tr>
+                  <tr>
+                     <td>HTML 5<td>2014-actualidad<td>La versión actual, diseñada para aplicaciones web modernas. Incorpora video/audio nativo, Canvas, geolocalización y etiquetas semánticas.
+                  </tr>
+                  <tr>
+                     <td>HTML Living Standard<td>Actualidad<td>Actualmente, HTML no se lanza por números enteros (como 6.0), sino que es una especificación viva (actualizada continuamente por el WHATWG).</tr>
+               </tbody>
+            </table>
+         </section>
+         <hr>
+         <section>
+            <h2>Ubicación del CERN</h2>
+            <iframe 
+                  width="100%" 
+                  height="300" 
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=6.0435%2C46.2295%2C6.0635%2C46.2375&amp;layer=mapnik&amp;marker=46.2335%2C6.0535">
+            </iframe>
+         </section>
+         <hr>
+         <section>
+            <h2>Tabla periódica de los elementos</h2>
+            <table border="5" cellpadding="8" style="text-align: center; border-collapse: collapse;">
+               <caption>Elementos Químicos organizados por número atómico</caption>
+               <tr>
+                     <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th>
+               </tr>
+
+               <tr>
+                     <td><strong>H</strong><br>1</td>
+                     <td colspan="16" style="border: none;"></td> <td><strong>He</strong><br>2</td>
+               </tr>
+
+               <tr>
+                     <td><strong>Li</strong><br>3</td>
+                     <td><strong>Be</strong><br>4</td>
+                     <td colspan="10" style="border: none;"></td> <td><strong>B</strong><br>5</td>
+                     <td><strong>C</strong><br>6</td>
+                     <td><strong>N</strong><br>7</td>
+                     <td><strong>O</strong><br>8</td>
+                     <td><strong>F</strong><br>9</td>
+                     <td><strong>Ne</strong><br>10</td>
+               </tr>
+
+               <tr>
+                     <td><strong>Na</strong><br>11</td>
+                     <td><strong>Mg</strong><br>12</td>
+                     <td colspan="10" style="border: none;"></td> <td><strong>Al</strong><br>13</td>
+                     <td><strong>Si</strong><br>14</td>
+                     <td><strong>P</strong><br>15</td>
+                     <td><strong>S</strong><br>16</td>
+                     <td><strong>Cl</strong><br>17</td>
+                     <td><strong>Ar</strong><br>18</td>
+               </tr>
+
+               <tr>
+                     <td><strong>K</strong><br>19</td>
+                     <td><strong>Ca</strong><br>20</td>
+                     <td><strong>Sc</strong><br>21</td>
+                     <td><strong>Ti</strong><br>22</td>
+                     <td><strong>V</strong><br>23</td>
+                     <td><strong>Cr</strong><br>24</td>
+                     <td><strong>Mn</strong><br>25</td>
+                     <td><strong>Fe</strong><br>26</td>
+                     <td><strong>Co</strong><br>27</td>
+                     <td><strong>Ni</strong><br>28</td>
+                     <td><strong>Cu</strong><br>29</td>
+                     <td><strong>Zn</strong><br>30</td>
+                     <td><strong>Ga</strong><br>31</td>
+                     <td><strong>Ge</strong><br>32</td>
+                     <td><strong>As</strong><br>33</td>
+                     <td><strong>Se</strong><br>34</td>
+                     <td><strong>Br</strong><br>35</td>
+                     <td><strong>Kr</strong><br>36</td>
+               </tr>
+
+               <tr>
+                     <td><strong>Rb</strong><br>37</td>
+                     <td><strong>Sr</strong><br>38</td>
+                     <td><strong>Y</strong><br>39</td>
+                     <td><strong>Zr</strong><br>40</td>
+                     <td><strong>Nb</strong><br>41</td>
+                     <td><strong>Mo</strong><br>42</td>
+                     <td><strong>Cd</strong><br>48</td>
+                     <td><strong>In</strong><br>49</td>
+                     <td><strong>Sn</strong><br>50</td>
+                     <td><strong>Sb</strong><br>51</td>
+                     <td><strong>Te</strong><br>52</td>
+                     <td><strong>I</strong><br>53</td>
+                     <td><strong>Xe</strong><br>54</td>
+               </tr>
+
+               <tr>
+                     <td><strong>Cs</strong><br>55</td>
+                     <td><strong>Ba</strong><br>56</td>
+                     <td><strong>La-Lu</strong><br>*</td> <td><strong>Hf</strong><br>72</td>
+                     <td><strong>Ta</strong><br>73</td>
+                     <td><strong>W</strong><br>74</td>
+                     <td><strong>Re</strong><br>75</td>
+                     <td><strong>Os</strong><br>76</td>
+                     <td><strong>Ir</strong><br>77</td>
+                     <td><strong>Pt</strong><br>78</td>
+                     <td><strong>Au</strong><br>79</td>
+                     <td><strong>Hg</strong><br>80</td>
+                     <td><strong>Tl</strong><br>81</td>
+                     <td><strong>Pb</strong><br>82</td>
+                     <td><strong>Bi</strong><br>83</td>
+                     <td><strong>Po</strong><br>84</td>
+                     <td><strong>At</strong><br>85</td>
+                     <td><strong>Rn</strong><br>86</td>
+               </tr>
+
+               <tr>
+                     <td><strong>Fr</strong><br>87</td>
+                     <td><strong>Ra</strong><br>88</td>
+                     <td><strong>Ac-Lr</strong><br>**</td> <td><strong>Rf</strong><br>104</td>
+                     <td><strong>Db</strong><br>105</td>
+                     <td><strong>Sg</strong><br>106</td>
+                     <td><strong>Bh</strong><br>107</td>
+                     <td><strong>Hs</strong><br>108</td>
+                     <td><strong>Mt</strong><br>109</td>
+                     <td><strong>Ds</strong><br>110</td>
+                     <td><strong>Rg</strong><br>111</td>
+                     <td><strong>Cn</strong><br>112</td>
+                     <td><strong>Nh</strong><br>113</td>
+                     <td><strong>Fl</strong><br>114</td>
+                     <td><strong>Mc</strong><br>115</td>
+                     <td><strong>Lv</strong><br>116</td>
+                     <td><strong>Ts</strong><br>117</td>
+                     <td><strong>Og</strong><br>118</td>
+               </tr>    <td><strong>Tc</strong><br>43</td>
+                     <td><strong>Ru</strong><br>44</td>
+                     <td><strong>Rh</strong><br>45</td>
+                     <td><strong>Pd</strong><br>46</td>
+                     <td><strong>Ag</strong><br>47</td>
+            </table>
+         </section>
+      </article>
+      <hr>
+      <a href="#inicio">Volver al inicio</a>
+      <hr>
+      <iframe src="https://www.wttr.in/Malaga" frameborder="0"></iframe>
+   </main>
+   <hr>
+   <aside>
+      <p>
+         Información extra:
+      </p>
+      <ul>
+         <li> 
+            <a href="https://es.wikipedia.org/wiki/HTML">
+               HTML
+            </a>
+         </li>
+         <li> 
+            <a href="https://es.wikipedia.org/wiki/CSS">
+               CSS
+            </a>
+         </li>
+         <li>
+            <a href="https://es.wikipedia.org/wiki/JavaScript">
+               JavaScript
+            </a>
+         </li>
+         <li>
+            <a href="https://es.wikipedia.org/wiki/TypeScript">
+               TypeScript
+            </a>
+         </li>
+      </ul>
+    </aside>
+   
+    <footer>
+      <p>
+         Autor: Lucas Díaz Ruiz <br>
+         Asignatura: Tecnologías del Cliente para Aplicaciones Web<br>
+         Titulación: Ingeniería de Software<br>
+         Universidad: Universidad de Malaga<br>
+         Año: 2025-2026<br>
+         Curso: 3ºA<br>
+         Semestre: 2º<br>
+         &copy; 2026 Todos los derechos reservados.
+      </p>
+    </footer>
+
+ </body>
+
+</html>

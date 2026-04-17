@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Botón sencillo actualizable.</title>
+    <style>
+        button {
+            font-family: "helvetica neue", helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid rgb(200 200 0 / 60%);
+            background-color: rgb(0 217 217 / 60%);
+            color: rgb(100 0 0 / 100%);
+            box-shadow: 1px 1px 2px rgb(0 0 200 / 40%);
+            border-radius: 10px;
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const boton = document.querySelector("button");
+
+        function actualizarNombre() {
+            const nombre = prompt("Introduce el nombre del jugador:");
+            const boton = document.querySelector("button");
+            boton.textContent = `Jugador 1: ${nombre}`;
+        }
+
+        boton.addEventListener("click", actualizarNombre);
+
+    </script>
+</head>
+<body>
+    <button type="button" id="button">Jugador 1: Christian</button>
+</body>
+</html>

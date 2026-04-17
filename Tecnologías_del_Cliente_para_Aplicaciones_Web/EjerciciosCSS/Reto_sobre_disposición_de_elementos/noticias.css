@@ -1,0 +1,295 @@
+/* ==========================================================================
+   RETO: MAQUETACIÓN DE PORTAL DE NOTICIAS 
+   ==========================================================================
+   DESCRIPCIÓN: Maquetar el archivo noticias.html aplicando flujo normal, 
+   flotantes, posicionamiento, Flexbox, CSS Grid y media queries.
+   No modificar el HTML (salvo el <link>).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Enlace de la hoja de estilos
+   (Recordatorio: Descomenta la línea <link> en el <head> del HTML)
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   2. Estilos base y flujo normal
+   - box-sizing: border-box para todos los elementos (*).
+   - body: fuente, color de texto, color de fondo y márgenes.
+   - Ancho máximo de 1200px y centrado (margin: 0 auto) para:
+     #cabecera, #nav-principal, #contenedor-principal y #pie.
+   -------------------------------------------------------------------------- */
+* {
+   box-sizing: border-box;
+}
+body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+   color: rgb(80, 26, 26);
+   background-color: lightcyan;
+   margin: 2em;
+}
+#cabecera, #nav-principal, #contenedor-principal, #pie {
+   max-width: 1200px;
+   margin: 0 auto;
+
+   border: 1px solid grey;
+}
+ 
+/* --------------------------------------------------------------------------
+   3. Cabecera con Flexbox
+   - display: flex a #cabecera.
+   - justify-content para separar #marca y #fecha a los extremos.
+   - align-items para alinear verticalmente al centro.
+   - Añade color de fondo, relleno y color de texto.
+   -------------------------------------------------------------------------- */
+#cabecera {
+   display: flex;
+   align-items: center;
+
+   justify-content: space-between;
+
+   background-color: rgb(200, 232, 243);
+   padding: 2em 1em;
+   color: rgb(182, 49, 49);
+}
+
+
+/* --------------------------------------------------------------------------
+   4. Barra de navegación con Flexbox
+   - #nav-principal ul: quita estilo de lista, márgenes y rellenos a 0.
+   - display: flex a #nav-principal ul (horizontal).
+   - #nav-principal a: sin subrayado, padding, display: inline-block, 
+     colores de fondo y texto.
+   - :hover para cambiar color de fondo del enlace activo.
+   -------------------------------------------------------------------------- */
+#nav-principal ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+
+   display: flex;
+}
+
+#nav-principal a {
+   text-decoration: none;
+   padding: 2em;
+   display: inline-block;
+   background-color: lightseagreen;
+   color: rgb(49, 49, 49);
+}
+#nav-principal a:hover {
+   background-color: rgb(199, 142, 56);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. Noticia destacada con imagen flotante
+   - .destacada img: float: left, con margen derecho e inferior.
+   - Limita el ancho de la imagen flotante al 45%.
+   - .destacada .cuerpo-noticia: overflow: hidden (evita solapamiento).
+   - clear: left en el siguiente elemento si fuera necesario.
+   -------------------------------------------------------------------------- */
+.destacada img {
+   float: left;
+   margin-right: 1em;
+   margin-bottom: 2em;
+   max-width: 45%;
+}  
+
+.destacada .cuerpo-noticia {
+   overflow: hidden;
+   clear: left;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. Rejilla de noticias con CSS Grid
+   - display: grid a #rejilla-noticias.
+   - 3 columnas de igual ancho: repeat(3, 1fr).
+   - Alto mínimo de fila: grid-auto-rows: minmax(320px, auto).
+   - Añade gap.
+   - .noticia: fondo blanco, borde fino, bordes redondeados y 
+     overflow: hidden.
+   - La imagen de .noticia ocupa el 100% del ancho.
+   -------------------------------------------------------------------------- */
+#rejilla-noticias {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: minmax(320px, auto);
+   gap: 2em;
+}
+.noticia {
+   background-color: white;
+   border: 1px solid grey;
+   border-radius: 2%;
+   overflow: hidden;
+}
+.noticia img {
+   max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   7. Layout principal con CSS Grid
+   - display: grid a #contenedor-principal.
+   - 2 columnas: #noticias (3fr) y #barra-lateral (1fr).
+   - Añade gap entre columnas.
+   -------------------------------------------------------------------------- */
+#contenedor-principal {
+   display: grid;
+   grid-template-columns: 3fr 1fr; /*#noticias, #barra-lateral */
+   /*Define 2 columnas, una ocupa 3 fracciones de espacio para
+   las noticias y otra para el aside*/
+   gap: 2em;
+}
+
+
+
+/* --------------------------------------------------------------------------
+   8. Posicionamiento
+   a) .noticia (position: relative) y su .categoria (position: absolute):
+      - Coloca la categoría en la esquina inferior izquierda superpuesta a 
+        la imagen (bottom, left). Dale fondo, relleno y color.
+   b) #boton-subir (position: fixed):
+      - Esquina inferior derecha (bottom, right). Dale estilo de botón.
+   c) #nav-principal (position: sticky):
+      - top: 0 y z-index alto para que se pegue arriba al hacer scroll.
+   -------------------------------------------------------------------------- */
+.noticia {
+   position: relative;
+}
+.categoria {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+
+   background-color: burlywood;
+   padding: 0.3em;
+   color: brown;
+}
+
+#boton-subir {
+   position: fixed;
+   bottom: 0;
+   right: 0;
+
+   background-color: burlywood;
+   padding: 0.3em;
+   color: brown;
+   border-radius: 15%;
+}
+
+#nav-principal {
+   position: sticky;
+   top: 0;
+   z-index: 1;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. Barra lateral y widget del tiempo con Flexbox
+   - .widget: fondo, relleno, borde y margin-bottom.
+   - .tiempo-ciudad: display: flex.
+   - justify-content: space-between para separar .ciudad, .temperatura y 
+     .descripcion uniformemente.
+   -------------------------------------------------------------------------- */
+.widget {
+   background-color: lightseagreen;
+   padding: 0.5em;
+   margin-bottom: 0.5em;
+   border: 2px solid grey;
+   color: rgb(49, 49, 49);
+}
+.tiempo {
+   display: flex;
+   justify-content: space-between;
+}
+
+
+
+/* --------------------------------------------------------------------------
+   10. Pie de página con CSS Grid
+   - display: grid a #pie.
+   - 4 columnas de igual ancho: repeat(4, 1fr).
+   - Añade gap.
+   - Define colores de fondo y texto.
+   -------------------------------------------------------------------------- */
+#pie {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 0.5em;
+   background-color: lightseagreen;
+   color: rgb(49, 49, 49);
+   margin-top: 1em;
+
+   border: 1px solid grey;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. Diseño adaptativo con media queries (Mobile-last / Desktop-first)
+   a) width < 900px:
+      - #contenedor-principal: 1 columna (#aside debajo de #noticias).
+      - #rejilla-noticias: 2 columnas.
+      - #cabecera: flex-direction: column (apila marca y fecha).
+   b) width < 600px:
+      - #rejilla-noticias: 1 columna.
+      - #pie: 2 columnas.
+      - Barra de navegación: flex-wrap: wrap.
+      - Imagen .destacada: float: none y ocupa 100% de ancho.
+   -------------------------------------------------------------------------- */
+@media screen and (width < 900px) {
+
+   #contenedor-principal {
+      display: grid;
+
+      grid-template-columns: 1fr;
+      gap: 1.5em;
+   }
+
+   #rejilla-noticias {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: minmax(200px, auto);
+      gap: 1em;
+   }
+
+   #cabecera {
+      flex-direction: column;
+   }
+}
+
+@media screen and (width < 600px) {
+   #rejilla-noticias {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+      gap: 1.5em;
+   }
+   #pie {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5em;
+   }
+   #nav-principal {
+      flex-wrap: wrap;
+   }
+   .destacada {
+      float: none;
+      max-width: 100%;
+   }
+}
+
+
+/* --------------------------------------------------------------------------
+   12. Tipografía adaptativa
+   - #cabecera h1: font-size: calc(1.5rem + 2vw);
+   - Media query > 1200px: Fija el tamaño del h1 a un valor máximo en rem.
+   -------------------------------------------------------------------------- */
+#cabecera h1 {
+   font-size: calc(1.5rem + 2vw);
+}
+
+@media screen and (width > 1200px) {
+   #cabecera h1 {
+      font-size: 1rem;
+   }
+}

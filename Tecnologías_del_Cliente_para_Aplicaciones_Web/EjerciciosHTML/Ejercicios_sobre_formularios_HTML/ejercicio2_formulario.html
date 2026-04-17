@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formulario de opinión</title>
+    <link href="ejercicio-formulario-retroalimentacion-estilo.css" rel="stylesheet" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <form>
+        <article>
+            <h1>Formulario de inscripción</h1>
+            <section class="form-section">
+                <h2>Información Personal</h2>
+                <div class="separator">
+                    <label for="nombre-completo">Nombre completo</label>
+                    <input type="text" name="nombre-completo" id="nombre-completo" required placeholder="Lucas Díaz Ruiz">
+                </div>
+                <div class="separator">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="separator">
+                    <label for="tel">Teléfono</label>
+                    <input type="tel" name="tel" id="tel" minlength="9" required>
+                </div>
+                <div class="separator">
+                    <label for="f-nacimiento">Fecha de nacimiento</label>
+                    <input type="date" name="f-nacimiento" id="f-nacimiento" max="2010-01-01" required>
+                </div>
+                <fieldset>
+                    <legend>Género</legend>
+                    <div class="separator">
+                        <input type="radio" name="genero" value="masc" id="masc" >
+                        <label for="masc">Masculino</label>
+                    </div>
+                    <div class="separator">
+                        <input type="radio" name="genero" value="fem"  id="fem" >
+                        <label for="fem">Femenino</label>
+                    </div>
+                    <div class="separator">
+                        <input type="radio" name="genero" value="otro"  id="otro" >
+                        <label for="otro">Otro</label>
+                    </div>
+                    <div class="separator">
+                        <input type="radio" name="genero" value="no-decir" id="no-decir" >
+                        <label for="no-decir">Prefiero no decirlo</label>
+                    </div>
+                </fieldset>
+            </section>
+            <section class="form-section">
+                <h2>Información de suscripción</h2>
+                    <label for="suscripcion">Tipo de suscripción</label>
+                    <select size="1" name="suscripcion" id="suscripcion">
+                        <option value="basica">Basica (29€/mes)</option>
+                        <option value="premium">Premium (49€/mes)</option>
+                        <option value="vip">VIP (79€/mes)</option>
+                    </select>
+            </section>
+            <section class="form-section">
+                <fieldset>
+                    <legend>Actividades de interés</legend>
+                    <div class="separator">
+                        <input type="checkbox" name="interes" value="yoga" id="yoga">
+                        <label for="yoga">Yoga</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" name="interes" value="spinning" id="spinning">
+                        <label for="spinning">Spinning</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" name="interes" value="pilates" id="pilates">
+                        <label for="pilates">Pilates</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" name="interes" value="musculacion" id="musculacion">
+                        <label for="musculacion">Musculación</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" name="interes" value="natacion" id="natacion">
+                        <label for="natacion">Natación</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" name="interes" value="crossfit" id="crossfit">
+                        <label for="crossfit">Crossfit</label>
+                    </div>
+                </fieldset>
+            </section>
+            <section class="form-section">
+                <h2>Horario preferido</h2>
+                <fieldset>
+                    <legend>Horario preferido</legend>
+                    <div class="separator">
+                        <input type="radio" name="horario" value="manana" id="manana">
+                        <label for="manana">Mañana</label>
+                    </div>
+                    <div class="separator">
+                        <input type="radio" name="horario" value="tarde" id="tarde">
+                        <label for="tarde">Tarde</label>
+                    </div>
+                    <div class="separator">
+                        <input type="radio" name="horario" value="noche" id="noche">
+                        <label for="noche">Noche</label>
+                    </div>
+                </fieldset>
+            </section>
+            <section class="form-section">
+                <h2>Información Adicional</h2>
+                <fieldset>
+                    <legend>¿Tienes experiencia previa en gimnasios?</legend>
+                    <div class="separator">
+                        <input type="radio" name="experiencia" value="si-exp" id="si-exp">
+                        <label for="si-exp">Si</label>
+                    </div>
+                    <div class="separator">
+                        <input type="radio" name="experiencia" value="no-exp" id="no-exp">
+                        <label for="no-exp">No</label>
+                    </div>
+                </fieldset>
+                <div class="separator"> 
+                    <label for="objetivos">Objetivos fitness</label><br>
+                    <textarea name="objetivos" id="objetivos" minlength="50" placeholder="Escribe al menos 50 caracteres..."></textarea>
+                </div>
+                <br><br>
+                <div class="separator">
+                    <label for="procedencia">¿Cómo nos conociste?</label>
+                    <select size="1" name="procedencia" id="procedencia">
+                        <option value="redes">Redes sociales</option>
+                        <option value="amigos-familia">Amigos/Familia</option>
+                        <option value="publicidad">Publicidad online</option>
+                        <option value="de-paso">Paso por aquí</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </section>
+            <section class="form-section">
+                <h2>Finalización</h2>
+                <fieldset>
+                    <div class="separator">
+                        <input type="checkbox" name="terminos-condiciones" id="terminos-condiciones" required>
+                        <label for="terminos-condiciones">Acepto los términos y condiciones</label>
+                    </div>
+                </fieldset>
+                
+                <div class="separator">
+                    <button type="submit"> Enviar</button>
+                </div>
+                <div class="separator">
+                    <button type="reset">Limpiar respuestas</button>            
+                </div>
+            </section>
+        </article>
+    </form>
+  </body>
+</html>

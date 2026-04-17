@@ -1,0 +1,107 @@
+<!--
+Ejemplo en html y javascript de una página html 
+que tiene una lista ul, con tres elementos li y un botón y 
+cada vez que se pulsa el botón se añade un nuevo elemento 
+li a la lista ul.
+-->
+
+<!--
+Cada vez que se pulsa el botón, el manejador del evento click 
+crea un nuevo elemento <li> con document.createElement, 
+le asigna texto con textContent, lo añade al final de la lista 
+con appendChild e incrementa el contador para que el siguiente 
+elemento tenga un número diferente.-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista dinámica</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ejercicio sobre manipulación</h1>
+
+    <section>
+        <h2>Ejercicio 0 - CV</h2>
+        <ul id="ej0_lista">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+        <button id="ej0_boton">Añadir elemento</button>
+    </section>
+
+    <section>
+        <h2>Ejercicio 1 - Crear dinámicamente una tabla HTML</h2>
+        <div>
+            <button id="ej1_button">Añadir tabla de 2x2</button>
+        </div>
+        <br>
+        <h3>Ejercicio 1 - Versión con parámetros</h3>
+        <div>
+            <label for="ej1_A">Filas</label>
+            <input type="number" name="ej1_A" id="ej1_A">
+            </div>
+        <div>
+            <label for="ej1_B">Columnas</label>
+            <input type="number" name="ej1_B" id="ej1_B">
+        </div>
+        <div>
+            <button id="ej1_button_v2">Crear tabla de A x B</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 2 - Maneajar un semáforo con colores</h2>
+        <div class="ej2_semaforo">
+            <div class="ej2_circulos ej2_circulo-a"></div>
+            <div class="ej2_circulos ej2_circulo-b"></div>
+            <div class="ej2_circulos ej2_circulo-c"></div>
+        </div>
+        <br>
+        <div>
+            <button id="ej2_rojo">Rojo</button>
+            <button id="ej2_ambar">Ámbar</button>
+            <button id="ej2_verde">Verde</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3 - Mantener el tamaño de una lista dinámica</h2>
+        <ol id="ej3_lista">
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ol>
+        <button id="ej3_boton">Añadir elemento</button>
+    </section>
+
+    <section>
+        <h2>Ejercicio 4 - Editor de tabla dinámica</h2>
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo-tabla">
+
+            </tbody>
+        </table>
+
+        <div id="formulario">
+            <input id="campo-nombre"   type="text"   placeholder="Nombre" />
+            <input id="campo-apellido" type="text"   placeholder="Apellido" />
+            <input id="campo-edad"     type="number" placeholder="Edad" />
+            <button id="btn-añadir-fila">Añadir fila</button>
+        </div>
+        <p id="contador">Total de filas: 0</p>
+    </section>
+</body>
+</html>
+

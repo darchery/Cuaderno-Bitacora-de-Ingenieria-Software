@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ej1 - Formulario de opinión</title>
+    <link href="ejercicio-formulario-retroalimentacion-estilo.css" rel="stylesheet" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>  
+
+  <form>
+     <article>
+        <section class="form-section">
+            <h1>¡Estamos encantados de oír tu opinión!</h1>
+            <p>
+                Te damos las gracias por visitar <a href="#">nuestra casa rural</a> y nos encantaría oír tu opinión 
+                sobre ella. Por favor, rellena las siguientes secciones. No es necesario que nos 
+                proporciones tu nombre o datos de contacto, pero si lo haces, entrarás en un 
+                <a href="#">sorteo</a> donde tendrás la oportunidad de ganar divertidos premios.
+            </p>
+            <figure>
+                <img src="https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg">
+            </figure>        
+        </section>
+        
+        <section class="form-section">
+            <h2>Instalaciones</h2>
+            <fieldset>
+                <legend>¿Cómo te pareció la habitación?</legend>
+                <div class="separator">
+                    <input type="radio" name="op-habitacion" id="hab-pequena" value="hab-pequena" checked>
+                    <label for="hab-pequena">Demasiado pequeña</label>
+                </div>
+                <div class="separator">
+                    <input type="radio" name="op-habitacion" id="hab-grande" value="hab-grande">
+                    <label for="hab-grande">Demasiado grande</label>
+                </div>
+                <div class="separator">
+                    <input type="radio" name="op-habitacion" id="hab-adecuada" value="hab-adecuada">
+                    <label for="hab-adecuada">Justo lo que esperaba</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+            <legend>¿Qué te pareció la cama?</legend>
+                <div class="separator">
+                    <input type="radio" name="op-cama" id="cama-dura" checked>
+                    <label for="cama-dura">Demasiado dura</label>
+                </div>
+                <div class="separator">
+                    <input type="radio" name="op-cama" id="cama-blanda">
+                    <label for="cama-blanda">Demasiado blanda</label>
+                </div>
+                <div class="separator">
+                    <input type="radio" name="op-cama" id="cama-adecuada">
+                    <label for="cama-adecuada">Justo lo que esperaba</label>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Describe las instalaciones en general (puedes elegir varias opciones)</legend>
+                <div class="separator">
+                    <input type="checkbox" name="instalaciones" id="cboxIns1">
+                    <label for="cboxIns1"> Cómodas</label>
+                </div>
+                <div class="separator">
+                    <input type="checkbox" name="instalaciones" id="cboxIns2">
+                    <label for="cboxIns2">Lujosas</label>
+                </div>
+                <div class="separator">
+                    <input type="checkbox" name="instalaciones" id="cboxIns3">
+                    <label for="cboxIns3">De alta tecnología</label>
+                </div>
+                <div class="separator">
+                    <input type="checkbox" name="instalaciones" id="cboxIns4">
+                    <label for="cboxIns4">Coquetas</label>
+                </div>
+                <div class="separator">
+                    <input type="checkbox" name="instalaciones" id="cboxIns5">
+                    <label for="cboxIns5">Majestuosas</label>
+                </div>
+            </fieldset>
+        </section>
+        
+        <section class="form-section">
+            <h2>Sobre los anfitriones</h2>
+            <div class="separator">
+                <label for="empleado-fav">¿Cuál es tu empleado favorito?</label>
+                <select size=1 name="empleado-fav" id="empleado-fav">
+                    <option value="mayordomo">El mayordomo</option>
+                    <option value="cocinera">La cocinera</option>
+                    <option value="ama-llaves">La ama de llaves</option>
+                    <option value="jardinero">El jardinero</option>
+                </select>
+            </div>
+            <div class="separator">
+                <label for="saludo-fav">¿Qué saludo preferías?</label>
+                <select size="1" name="saludo-fav" id="saludo-fav">
+                    <option value="reverencia">Reverencia</option>
+                    <option value="abrazo">Abrazo</option>
+                    <option value="chocar-cinco">Chocar los cinco</option>
+                    <option value="saludo-militar">Saludo militar</option>
+                </select>
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <h2>¿Alguna sugerencia adicional?</h2>
+            <label for="comentario">Danos tus comentarios</label>
+            <br>
+            <textarea name="comentario" id="comentario" cols="20" rows="10"></textarea>
+        </section>
+
+        <section class="form-section">
+            <h2>Tus detalles</h2>
+            <div class="separator">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div class="separator">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" name="correo" id="correo">
+            </div>
+            <div class="separator">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono">
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <button type="submit">Enviar</button>
+        </section>
+    </article>
+  </form>
+  </body>
+</html>

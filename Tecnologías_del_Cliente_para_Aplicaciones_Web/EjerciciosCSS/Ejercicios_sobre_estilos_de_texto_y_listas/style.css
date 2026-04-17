@@ -1,0 +1,258 @@
+/*1. Jerarquía tipográfica: Crea una página con un artículo que tenga <h1>, 
+<h2>, <h3>, párrafos y citas. Define una pila de fuentes combinando 
+<font-family> con una fuente específica y una genérica. 
+Justifica por qué esa pila es robusta en distintos sistemas.
+
+Usamos una pila de fuentes para evitar que un usuario carezca de la fuente
+principal seleccionada, y pueda visionar la página con otra fuente
+*/
+
+h1, h2, h3, p, blockquote {
+    font-family: 'Lucida Sans', Arial, sans-serif;
+}
+
+/*2. Escalas de tamaño: Diseña una escala tipográfica con <font-size> usando
+ <px>, <em> y <rem>. Explica en un comentario de clase cómo cambia 
+ el resultado cuando se modifica el tamaño base del elemento raíz.
+ 
+- px: Es una unidad absoluta. Si el usuario o el sistema cambian el tamaño base, 
+        el h1 se queda igual (mal para accesibilidad).
+- rem (Root EM): Depende directamente del <html>. Si el elemento raíz cambia de 16px a 20px, 
+        el h3 y el p crecerán proporcionalmente.
+- em: Depende del tamaño de fuente de su elemento padre. Si no hay un tamaño definido 
+        en el padre, sube por la cascada hasta el raíz, por lo que también se vería afectado 
+        indirectamente por cambios en el <html>
+ */
+ h1 {
+    font-size: 2.5rem;
+ }
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+ p {
+    font-size: 12px;
+ }
+
+ blockquote {
+    font-size: 1em;
+ }
+
+ /*3, Comparación de estilos: Implementa tres bloques de texto 
+ con el mismo contenido usando <font-style: normal>, 
+ <italic> y <oblique>. Analiza visualmente diferencias y 
+ discute en qué escenarios usarías cada uno.
+ 
+ He aplicado los 3 tipos de estilos diferenciando así cada
+ bloque. Usario normalmente el normal, itálica o oblique para alguna
+ cita o frases destacadas o en otro idioma.
+ */
+
+.bloque1 {
+    font-style: normal;
+}
+
+.bloque2 {
+    font-style: italic;
+}
+
+.bloque3 {
+    font-style: oblique;
+}
+
+/*4 .Pesos y legibilidad: Aplica distintos valores de 
+<font-weight> (numéricos y palabras clave) a títulos y
+párrafos. Evalúa la legibilidad en pantallas pequeñas y
+ plantea ajustes.
+ 
+ Cuanto menos peso le ortogues a la fuente peor será su 
+ legibilidad pantallas pequeñas. Y leer mucho texto en 
+ negrita, fatiga a los usuarios.
+ */
+ 
+ h1, h2, h3 {
+    font-weight: 300px;
+ }
+ 
+ p {
+    font-weight: lighter;
+ }
+
+ /*5. Decoración semántica: Crea un texto con énfasis, 
+ términos eliminados y texto resaltado. Usa 
+ <text-decoration> de forma consistente con el 
+ significado del texto, no solo con lo visual.
+ 
+ 
+ */
+
+#header4 {
+    text-decoration: underline;
+}
+
+#p4 {
+    text-decoration: line-through;
+ }
+
+ #c4 {
+    text-decoration: overline;
+ }
+
+
+ /*6. Alineación avanzada: Construye un bloque con párrafos 
+ que alternen <text-align: left>, <right>, <center> y 
+ <justify>. Añade un breve análisis sobre cómo afecta 
+ la alineación a la lectura de textos largos.
+ 
+- Centrado: vemos que el texto se va expandiendo por 
+ la página hasta llegar a un límite, pero siempre centrado
+- Izquierda: vemos que el texto se asigna de forma "normal", y
+ se va rellenando la fila hasta llegar a un margen derecho
+- Derecha: vemos que el texto se asigna de derecha a izquierda y
+ se va rellenando la fila hasta llegar a un margen izquierdo.
+ -Justificado: es igual que el izquierdo pero, el margen derecho 
+ e izquierdo es el mismo
+ */
+
+#p5-1 {
+    text-align: center;
+}
+
+#p5-2 {
+    text-align: left;
+}
+
+#p5-3 {
+    text-align: right;
+}
+
+#p5-4 {
+    text-align: justify;
+}
+
+/*7. Transformaciones controladas: Aplica <text-transform> para generar 
+títulos en mayúsculas, subtítulos en minúsculas y nombres propios capitalizados. 
+Discute posibles problemas lingüísticos en español.
+
+En español puede ser problemático porque pone en mayúsculas todas las palabras(preposiciones y artículos)
+incluídos.
+*/
+
+#pt-mayus {
+    text-transform: uppercase;
+}
+
+#pt-minus {
+    text-transform: lowercase;
+}
+
+#pt-nombres {
+    text-transform: capitalize;
+}    
+
+
+/*8. Altura de línea óptima: Diseña un texto largo y ajusta <line-height> con valores 
+sin unidad. Compara al menos tres valores y determina uno que maximice la legibilidad.
+
+Entre 1.5 y 2 me parecen los más adecuados, más de 2 me parece exagerado
+*/
+#p7 {
+    line-height: 2;
+}
+
+/*9. Estilo de listas no ordenadas: Crea una lista con <list-style-type> diferente en cada 
+nivel de anidación. Debe incluir al menos tres niveles.*/
+#l8 {
+    list-style-type: armenian;
+}
+
+#l8-1 {
+    list-style-type: georgian;
+}
+
+#l8-2 {
+    list-style-type: lower-greek;
+}
+
+/*10. Posición del bullet: Construye dos listas idénticas, una con <list-style-position: inside>
+ y otra con <outside>. Describe diferencias en la alineación del texto.
+ 
+ Podemos observar que con la alineación inside, los elementos se desplazan un poco a la derecha
+ , mientras que usando outside quedán como estaban
+ */
+ #l9 {
+    list-style-position: inside;
+ }
+
+#l9-1 {
+    list-style-position: outside;
+}
+
+/*11. Imagen como bullet: Sustituye los bullets de una lista por una imagen usando
+ list-style-image. Asegura coherencia de tamaño y alineación.*/
+
+#l10 {
+   list-style-image: url(bala-small.png);
+}
+
+
+/*12. Control de numeración: En una lista ordenada, utiliza <start>, <value> y
+<reversed> para crear una secuencia no lineal. Explica por qué cada atributo
+es necesario.
+
+start: indica el inicio del contador en una lista ordenada
+reversed: invierte el orden del índice de la lista
+value: asigna un valor concreto al índice de un elemento
+*/
+
+
+/*13. Enlaces y estados: Crea un menú de enlaces y personaliza <a:link>, 
+<a:visited> y <a:hover>. Asegura que la distinción entre visitados y no 
+visitados sea clara y accesible.*/
+#li12-1 a:link  {
+    color: blue;
+}
+#li12-2 a:visited  {
+    color: mediumvioletred;
+}
+#li12-3 a:hover  {
+    color: goldenrod;
+}
+
+/*14. Modo de escritura: Diseña un bloque de texto que cambie entre
+ <writing-mode: horizontal-tb> y <vertical-rl>. Ajusta <inline-size> y 
+ <block-size> para evitar desbordamientos.*/
+ #p13 {
+    /*writing-mode: horizontal-tb;*/
+    writing-mode: vertical-lr;
+    inline-size: 200px; /*Equivalente a width*/
+    block-size: 300px; /*Equivalente a height*/
+
+ }
+
+ /*15. Propiedades lógicas vs físicas: Crea dos cajas equivalentes: una 
+ con <width/height> y otra con <inline-size/block-size>. Cambia el <writing-mode> 
+ y compara comportamientos.
+ 
+ Al quitar poner el modo vertical la caja de color salmon se queda idéntica, pero la magenta rota.
+ Para así satisfacer su condición, la cuál es dar soporte a la escritura vertical
+ */
+ .caja1 {
+    border: 2px solid salmon;
+    width: 200px;
+    height: 100px;
+    writing-mode: horizontal-tb;
+ }
+
+ .caja2 {
+    border: 2px solid darkmagenta;
+    inline-size: 200px;
+    block-size: 100px;
+    writing-mode: vertical-lr;
+
+ }

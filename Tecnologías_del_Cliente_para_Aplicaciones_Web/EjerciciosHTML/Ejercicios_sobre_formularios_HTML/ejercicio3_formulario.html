@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formulario de opinión</title>
+    <link href="ejercicio-formulario-retroalimentacion-estilo.css" rel="stylesheet" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <form>
+        <article>
+            <h1>Formulario para asistentes a la conferencia universitaria internacional</h1>
+            <figure>
+                <img class="imagen-cabecera" src="Gemini_Generated_Image_20pu8720pu8720pu.png" width="450" height="450" alt="conferencia_uma">
+            </figure>
+            <section class="form-section">
+                <h2>Datos personales</h2>
+                <div class="separator">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" name="nombre" id="nombre" required minlength="3" placeholder="Lucas Díaz Ruiz">
+                </div>
+                <div class="separator">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" required placeholder="lucasdr@uma.es">
+                </div>
+                <div class="separator">
+                    <label for="tel">Teléfono</label>
+                    <input type="tel" name="tel" id="tel" minlength="9" pattern="[0-9]{9}" placeholder="123456789">
+                </div>
+                <div class="separator">
+                    <label for="f-nacimiento">Fecha nacimiento</label>
+                    <input type="date" name="f-nacimiento" id="f-nacimiento">
+                </div>
+                <div class="separator">
+                    <label for="url-personal">Sitio web personal o perfil académico</label>
+                    <input type="url" name="url-personal" id="url-personal" placeholder="https://lucas.uma.es">
+                </div>
+            </section>   
+            <section class="form-section">
+                <h2>Información Académica</h2>
+                <div class="separator">
+                    <label for="anyos-exp">Años de experiencia en investigación</label>
+                    <input type="number" name="anyos-exp" id="anyos-exp" min="0" max="50" placeholder="15">
+                </div>
+                <div class="separator">
+                    <label for="nivel-conocimiento">Nivel de conocimiento en el tema</label>
+                    <input type="range" name="nivel-conocimiento" id="nivel-conocimiento" min="1" max="10" > 
+                    <output class="price-output" for="nivel-conocimiento"></output>
+                </div>
+                <div class="separator">
+                    <label for="uni">Universidad de procedencia</label>
+                    <select size="1" name="uni" id="uni">
+                        <option value="uma">UMA</option>
+                        <option value="uba">UBA</option>
+                        <option value="uhu">UHU</option>
+                        <option value="ucam">UCAM</option>
+                        <option value="ugr">UGR</option>
+                        <option value="uc3m">UC3M</option>
+                        <option value="us">US</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </div>
+                <div class="separator">   
+                    <label for="campo-inves">Campos de investigación</label>
+                    <input
+                        type="text"
+                        id="campo-inves"
+                        name="campo-inves"
+                        list="campos-inves"
+                        required
+                        pattern="[Ii]nformática|[Hh]istoria|[Mm]atemáticas|[Ii]ngeniería|[Ff]ilosofía|[Mm]edicina"/>
+                    <datalist id="campos-inves">
+                        <option>Informática</option>
+                        <option>Historia</option>
+                        <option>Ingeniería</option>
+                        <option>Matemáticas</option>
+                        <option>Filosofía</option>
+                        <option>Medicina</option>
+                    </datalist>
+                </div>
+            </section>
+            <section class="form-section">
+                <h2>Prefrencias de Asistencia</h2>
+                <fieldset>
+                    <legend>Talleres de interés</legend>
+                    <div class="separator">
+                        <input type="checkbox" value="ciberseguridad" name="talleres" id="ciberseguridad">
+                        <label for="ciberseguridad">Ciberseguridad</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" value="cirugia" name="talleres" id="cirugia">
+                        <label for="cirugia">Cirugía</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" value="mitologia" name="talleres" id="mitologia">
+                        <label for="mitologia">Mitología</label>
+                    </div>
+                    <div class="separator">
+                        <input type="checkbox" value="historia-social" name="talleres" id="historia-social">
+                        <label for="historia-social">Historia social</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Modalidad de asistencia</legend>
+                    <div class="separator">
+                        <input type="radio" value="presencial" name="asistencia" id="presencial">
+                        <label for="presencial">Presencial</label>
+                    </div>
+                        <div class="separator">
+                        <input type="radio" value="virtual" name="asistencia" id="virtual">
+                        <label for="virtual">Virtual</label>
+                    </div>
+                        <div class="separator">
+                        <input type="radio" value="hibrida" name="asistencia" id="hibrida">
+                        <label for="hibrida">Híbrida</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label for="color">Color preferido para identificación de credencial</label> 
+                    <input type="color" name="color" id="color">
+                </div>
+            </section>
+            <section class="form-section">
+                <h2>Logística</h2>
+                <div class="separator">
+                    <label for="fecha-llegada">Fecha y hora llegada estimada</label>
+                    <input type="datetime-local" name="fecha-llegada" id="fecha-llegada">
+                </div>
+                <div class="separator">
+                    <!--<fieldset>
+                    <legend>Hora preferida para sesiones</legend>-->
+                    <label for="hora-fav">Hora preferida para sesiones</label>
+                    <input type="time" name="hora-fav" id="hora-fav">
+                        <!--
+                        <div class="separator">
+                            <input type="radio" value="manana" name="hora-fav" id="manana">
+                            <label for="manana">Mañana</label>
+                        </div>
+                        <div class="separator">
+                            <input type="radio" value="tarde" name="hora-fav" id="tarde">
+                            <label for="tarde">Tarde</label>
+                        </div>
+                        -->
+                    <!--</fieldset>-->
+                </div>
+                <div class="separator">
+                    <label for="cv">Subir CV académico(máximo 5MB)</label>
+                    <input type="file" name="cv" id="cv" accept=".pdf, application/pdf">
+                </div>       
+                <div class="separator">
+                    <label for="mes-disponibilidad">Mes de disponibilidad para futuras ediciones</label>
+                    <input type="month" name="mes-disponibilidad" id="mes-disponibilidad">
+                </div>
+            </section>
+            <section class="form-section">
+                <h2>Información Adicional</h2>
+                <div class="separator">
+                    <label for="resumen-inves">Resumen de investigación actual</label>
+                    <textarea name="resumen-inves" id="resumen-inves" maxlength="500" placeholder="Mi investigación acutal podría ser resumida..."></textarea>
+                </div>
+                <div class="separator">
+                    <label for="palabras-clave">Buscar palabras clave de interés</label>
+                    <input type="search" name="palabras-clave" id="palabras-clave" placeholder="tecnología">
+                </div>
+                <input type="hidden" name="id-sesion" id="id-sesion" value="CONF-2026-X1Y2">
+            </section>
+            <section class="form-section">
+                <h2>Finalización</h2>
+                <div class="separator">
+                    <button type="submit"> Enviar</button>
+                </div>
+                <div class="separator">
+                    <button type="reset">Limpiar respuestas</button>            
+                </div>
+            </section>
+        </article>
+    </form>
+  </body>
+</html>

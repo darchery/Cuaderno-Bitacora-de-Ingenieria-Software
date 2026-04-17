@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+ <head>
+
+ <meta charset="utf-8" />
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <title>Ejercicios sobre almacenamiento en el lado del cliente</title>
+
+ <link rel="stylesheet" href="style.css"> 
+
+ <script src="script.js" defer></script> 
+
+ </head>
+
+ <body>
+
+    <h1>Ejercicios sobre almacenamiento en el lado del cliente </h1>
+    <section>
+        <h2>Ejercicio 1 - Selector de tema</h2>
+        <div>
+            <button id="claro">Claro</button>
+            <button id="oscuro">Oscuro</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3 - Carrito de la compra</h2>
+        <div>
+            <input type="text" name="i-buscar" id="i-buscar" placeholder="Producto">
+            <button id="b-anyadir">Añadir producto</button>
+        </div>
+        <div>
+            <h3>Carrito de la compra</h3>
+            <ol id="lista-carrito"></ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 4 - Aplicaciónes con notas en IndexDB</h2>
+        <div>
+            <h3>Creación de la nota</h3>
+            <h4>Título</h4>
+            <input type="text" name="i-titulo" id="i-titulo" placeholder="Título">
+            <h4>Cuerpo</h4>
+            <textarea cols="50" rows="10" name="t-cuerpo" id="t-cuerpo" placeholder="Cuerpo de la nota"></textarea>
+            <br>
+            <button id="b-guardar">Guardar</button>
+        </div>
+        <div>
+            <h3>Gestión de las notas</h3>
+            <button id="b-listar">Listar notas</button>
+            <ol id="lista-notas"></ol>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Ejercicio 5 - Almacen de imágenes</h2>
+        <div>
+            <button id="b-descargar-img">Descargar imagen aleatoria</button>
+        </div>
+        <div id="div-ej5">
+            
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 6 - Formulario de preferencias</h2>
+        <form id="form-preferencias">
+            <fieldset>
+                <legend>Idioma</legend>
+                    <select size="1" name="idioma" id="idioma">
+                        <option value="esp">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="por">Portugues</option>
+                        <option value="jp">Japonés</option>
+                        <option value="tur">Turco</option>
+                </select>
+            </fieldset>
+            <br><br>
+            <div>
+                <label for="tam-fuente">Tamaño de fuente</label>
+                <input type="number" name="tam-fuente" id="tam-fuente" min="1">
+            </div>
+            <br>
+            <fieldset>
+                <legend>Color de acento</legend>
+                    <select size="1" name="color-acento" id="color-acento">
+                        <option value="#007bff">Azul</option>
+                        <option value="#ff6600">Naranja</option>
+                        <option value="#28a745">Verde</option>
+                        <option value="#dc3545">Rojo</option>
+                    </select>
+            </fieldset>
+            <br>
+            <button id="guardar-pref">Guardar</button>
+        </form>
+        <section>
+            <h3>Prueba de tamaño fuente y color de acento</h3>
+            <h4>Título de prueba</h4>
+            
+            <p>Este es un <strong>párrafo</strong> con <a href="#">un enlace</a> y <em>texto enfatizado</em>.</p>
+            
+            <p>Otro párrafo con más contenido para ver cómo se ve el texto con diferentes tamaños de fuente.</p>
+            
+            <h4>Subtítulo</h4>
+            
+            <ul>
+                <li>Elemento de lista 1</li>
+                <li>Elemento de lista 2</li>
+                <li>Elemento de lista 3</li>
+            </ul>
+            
+            <a href="#">Otro enlace</a>
+            <br><br>
+            <button>Botón 1</button>
+            <button>Botón 2</button>
+            
+            <br><br>
+            <input type="text" placeholder="Campo de texto">
+            <select>
+                <option>Opción 1</option>
+                <option>Opción 2</option>
+            </select>
+        </section>
+    </section>
+    
+    <section>
+        <h2>Ejercicio 7 - Historial de búsqueda</h2>
+        <div>
+            <h3>Buscador</h3>
+            <div class="buscador">
+                <input type="text" id="i-buscador" name="i-buscador" placeholder="Buscar">
+                <button id="b-buscador">Buscar</button>
+            </div>
+            <ol id="historial"></ol>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 8 - Gestión de Contactos</h2>
+        <h3>Buscar contactos</h3>
+        <div>
+            <div class="buscador">
+                <input type="text" name="i-buscar-email" id="i-buscar-email" placeholder="lucas@uma.es">
+                <button id="b-email">Buscar</button>
+            </div>
+            <div>
+                <ul id="lista-emails">
+                    
+                </ul>
+            </div>
+        </div>
+        <h3>Añadir contacto</h3>
+        <form id="form-contacto">
+            <div class="form-partes">
+                <label for="nombre-contacto">Nombre</label>
+                <input type="text" name="nombre-contacto" id="nombre-contacto">
+            </div>
+            <div class="form-partes">
+                <label for="email-contacto">Email</label>
+                <input type="email" name="email-contacto" id="email-contacto">
+            </div>
+            <div class="form-partes">
+                <label for="telefono-contacto">Teléfono</label>
+                <input type="tel" name="telefono-contacto" id="telefono-contacto">
+            </div>
+            <br>
+            <button>Agregar contacto</button>
+        </form>
+        <h3>Contactos disponibles</h3>
+        <div>
+            <ol id="lista-contactos"></ol>
+            <button id="b-listar-contactos">Listar contactos</button>
+        </div>
+    </section>
+    <section>
+        <h2>Ejercicio 9 - Versiones de la base de datos en IndexDB</h2>
+        <h3>Añadir productos</h3>
+        <div class="buscador">
+            <input type="text" name="i-producto" id="i-producto" placeholder="Nombre">
+            <input type="text" name="i-categoria" id="i-categoria" placeholder="Categoría">
+            <button id="b-producto">Añadir</button>
+        </div>
+        <h4>Buscar por nombre</h4>
+        <div>
+            <div class="buscador">
+                <input type="text" name="i-buscar-por-nombre" id="i-buscar-por-nombre">
+                <button id="b-buscar-nombre">Buscar</button>
+            </div>
+            <div>
+                <ol id="lista-por-nombre">
+                    
+                </ol>
+            </div>
+        </div>
+        <h4>Buscar por categoria</h4>
+        <div>
+            <div class="buscador">
+                <input type="text" name="i-buscar-por-categoria" id="i-buscar-por-categoria">
+                <button id="b-buscar-categoria">Buscar</button>
+            </div>
+            <div>
+                <ol id="lista-por-categoria">
+                    
+                </ol>
+            </div>
+        </div>
+        <h4>Listar productos</h4>
+        <div>
+            <button id="b-listar-productos">Listar productos</button>
+            <div>
+                <ol id="lista-productos">
+
+                </ol>
+            </div>
+        </div>
+        <h3>Añadir pedidos</h3>
+        <div class="buscador">
+            <input type="text" name="i-pedido" id="i-pedido">
+            <button id="b-pedido">Añadir</button>
+        </div>
+        <div>
+            <ol id="lista-pedidos">
+
+            </ol>
+        </div>
+    </section>
+    <section>
+        <h2>Ejercicio 10 - Almacen de videos</h2>
+        <div>
+            <button id="b-descargar-video">Descargar lista de vídeos</button>
+        </div>
+        <div id="div-ej10">
+            
+        </div>
+    </section>
+        <section>
+        <h2>Ejercicio 10.V2 - Almacen de videos</h2>
+        <div id="div-ej10-v2">
+            <p>Esta versión se ejecuta automáticamente gracias a la función init</p>
+        </div>
+    </section>
+ </body>
+
+</html>
